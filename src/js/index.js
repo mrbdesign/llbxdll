@@ -1,65 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Footer Loading
+    fetch('/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => {
+            console.error('Error loading footer:', error);
+        });
+
     const sections = document.querySelectorAll('.section'); // Use the common class
-  
     if (sections.length > 0) { // Check if any sections were found
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate');
-              observer.unobserve(entry.target); // Only animate once
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
             }
-          });
-        },
-        {
-          threshold: 0.1,
-        }
-      );
-  
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
+        );
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
     } else {
-      console.warn('No elements with the class "section" found.');
+        console.warn('No elements with the class "section" found.');
     }
-  
+
     // Add click event listeners to grid items
     document.querySelectorAll('[class*="section"]').forEach(item => {
-      item.addEventListener('click', (e) => {
-        const classList = e.currentTarget.classList;
-        let sectionNumber = null;
-  
-        for (const className of classList) {
-          if (className.startsWith('section')) {
-            sectionNumber = className.replace('section', '');
-            break;
-          }
-        }
-  
-        if (sectionNumber) {
-          const pageName = getSectionPageName(sectionNumber);
-          window.location.href = `/${pageName}.html`;
-        } else {
-          console.warn('Could not determine section number.');
-        }
-      });
+        item.addEventListener('click', (e) => {
+            const classList = e.currentTarget.classList;
+            let sectionNumber = null;
+            for (const className of classList) {
+                if (className.startsWith('section')) {
+                    sectionNumber = className.replace('section', '');
+                    break;
+                }
+            }
+            if (sectionNumber) {
+                const pageName = getSectionPageName(sectionNumber);
+                window.location.href = `/${pageName}.html`;
+            } else {
+                console.warn('Could not determine section number.');
+            }
+        });
     });
-  
+
     function getSectionPageName(sectionNumber) {
-      const pageNames = {
-        '1': 'logo',
-        '2': 'little_world',
-        '3': 'pixel_world',
-        '4': 'educational_design',
-        '5': 'ar_xr',
-        '6': 'works',
-        '7': 'about',
-        '8': '3d',
-        '9': 'exhibitions',
-        '10': 'web3',
-        '11': 'contact'
-      };
-      return pageNames[sectionNumber] || 'index';
+        const pageNames = {
+            '1': 'logo',
+            '2': 'little_world',
+            '3': 'pixel_world',
+            '4': 'educational_design',
+            '5': 'ar_xr',
+            '6': 'works',
+            '7': 'about',
+            '8': '3d',
+            '9': 'exhibitions',
+            '10': 'web3',
+            '11': 'contact'
+        };
+        return pageNames[sectionNumber] || 'index';
     }
-  });
-  
+});
