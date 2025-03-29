@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <title>Mr.Brian Design</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    <style>
+        /* Styling for the contact form */
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-card {
+            background-color: black;
+            border-radius: 30px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .contact-card h1 {
+            margin-bottom: 20px;
+        }
+
+        .contact-card label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .contact-card input,
+        .contact-card textarea {
+            width: calc(100% - 40px);
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #333333; /* Dark gray fields */
+            color: white; /* White text in fields */
+        }
+
+        .contact-card textarea {
+            resize: none; /* Prevent resizing */
+        }
+
+        .contact-card button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: white; /* White button */
+            color: black; /* Black text on button */
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-card button:hover {
+            background-color: #f1f1f1; /* Slightly lighter hover effect */
+        }
+
+        #form-status {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body data-page-title="contact">
+    <!-- Contact Form Card -->
+    <div class="contact-card">
+        <h1>What's Up?</h1>
+        <form id="contact-form">
+            
+            <!-- Name Field -->
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <!-- Email Field -->
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <!-- Message Field -->
+            <label for="message">message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Send Message</button>
+        </form>
+        <!-- Status Message -->
+        <p id="form-status"></p>
+    </div>
+
+    <!-- EmailJS Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init("6U7D2I9QkVCCNf_9k"); // Replace YOUR_PUBLIC_KEY with your actual public key
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contact-form");
+            const status = document.getElementById("form-status");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Send the form data via EmailJS
+                emailjs.sendForm(
+                    "service_xk3nfr8", // Replace with your Service ID
+                    "template_stl5b6g", // Replace with your Template ID
+                    this // Pass the form element directly
+                )
+                .then(() => {
+                    status.textContent = "Message sent successfully!";
+                    status.style.color = "green";
+                    form.reset(); // Reset the form fields
+                })
+                .catch((error) => {
+                    console.error("Failed to send message:", error);
+                    status.textContent = "Failed to send message. Please try again.";
+                    status.style.color = "red";
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

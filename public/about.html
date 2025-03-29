@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script type="module" src="src/js/index.js"></script>
+    <title>Mr.Brian Design</title>
+    <link rel="stylesheet" href="src/css/index.css">
+</head>
+
+<body data-page-title="about">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div id="page-wrapper">
+        <main class="container desktop-p" style="padding-top: 90px;">
+            <h1 class="text-center" style="margin-bottom: 50px;">about</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </main>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Load Navbar
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+
+                    // Set the current page title dynamically
+                    const pageTitle = document.body.getAttribute('data-page-title');
+                    if (pageTitle) {
+                        const currentPageElement = document.querySelector('.llbxdll-current-page');
+                        if (currentPageElement) {
+                            currentPageElement.textContent = pageTitle;
+                        }
+                    }
+                });
+
+            // Load Footer
+            fetch('/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+
+</html>

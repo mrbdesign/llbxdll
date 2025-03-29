@@ -4,89 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
     <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
     <title>Mr.Brian Design</title>
     <link rel="stylesheet" href="src/css/index.css">
+    <style>
+        /* Styling for the contact form */
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-card {
+            background-color: black;
+            border-radius: 30px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .contact-card h1 {
+            margin-bottom: 20px;
+        }
+
+        .contact-card label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .contact-card input,
+        .contact-card textarea {
+            width: calc(100% - 40px);
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #333333; /* Dark gray fields */
+            color: white; /* White text in fields */
+        }
+
+        .contact-card textarea {
+            resize: none; /* Prevent resizing */
+        }
+
+        .contact-card button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: white; /* White button */
+            color: black; /* Black text on button */
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-card button:hover {
+            background-color: #f1f1f1; /* Slightly lighter hover effect */
+        }
+
+        #form-status {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
-<body>
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="#" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <ul class="llbxdll-navbar-nav flex space-x-6">
-                <li><a href="#" class="llbxdll-nav-link hover:text-gray-500">Home</a></li>
-                <li><a href="#" class="llbxdll-nav-link hover:text-gray-500">About</a></li>
-                <li><a href="#" class="llbxdll-nav-link hover:text-gray-500">Works</a></li>
-                <li><a href="#" class="llbxdll-nav-link hover:text-gray-500">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<body data-page-title="contact">
+    <!-- Contact Form Card -->
+    <div class="contact-card">
+        <h1>What's Up?</h1>
+        <form id="contact-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <div class="grid grid-columns place-content-center">
-                <div class="flex flex-column text-center flex-center bg-purple-500 text-white radius-sm px-300 py-400 col-2 tablet-p-400 section1 animate">
-                    <img src="LOGO.png" alt="Mr. Brian Design Logo">
-                    <p class="text">I'm Keepin' it Creative</p>
-                </div>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-                <div class="bg-white p-300 radius-sm flex flex-column section2 animate">
-                    <h2 class="text-200 tablet-mt-auto">little world</h2>
-                </div>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-                <div class="bg-yellow-500 p-300 radius-sm overflow-hidden section3 animate">
-                    <h2 class="text-200 mb-200">pixel world</h2>
-                </div>
-
-                <div class="bg-purple-100 p-400 radius-sm flex flex-column flex-center col-2 section4 overflow-hidden desktop-block animate">
-                    <h2 class="mb-300 text-200">educational design</h2>
-                    <p class="text-center max-w-1--2 desktop-texl-left desktop-w-full">funky + fun educational content for classrooms and home edutainment</p>
-                </div>
-
-                <div class="p-300 bg-purple-500 radius-sm flex flex-column flex-center tablet-flex-row tablet-flex-evenly col-2 section6 animate">
-                    <h2 class="text-white text-150 text-center max-w-1--2 desktop-texl-left">works</h2>
-                </div>
-
-                <div class="bg-white p-300 radius-sm flex flex-column flex-center tablet-flex-row tablet-flex-evenly col-2 section5 desktop-flex-column animate">
-                    <div>
-                        <span class="text-100 mb-200 block">AR + XR</span>
-                        <h2 class="text-300 mb-300">mind-blowing, augmented + mixed reality experiences</h2>
-                    </div>
-                </div>
-
-                <div class="bg-yellow-100 radius-sm p-400 flex flex-column align-center create section7 animate">
-                    <h2 class="text-150 mb-300">about</h2>
-                </div>
-
-                <div class="bg-yellow-500 p-400 radius-sm section8 flex flex-center animate">
-                    <h2 class="text-150 mb-300" style="font-size: 200%; font-weight: bold;">3D</h2>
-                </div>
-
-                <div class="bg-white p-300 radius-sm flex flex-column flex-center text-center section9 p-300 animate">
-                    <h2>exhibitions</h2>
-                </div>
-
-                <div class="bg-purple-100 p-400 radius-sm flex flex-column flex-center text-center section10 p-300 animate">
-                    <h2>web3</h2>
-                </div>
-
-                <div class="bg-yellow-500 p-300 radius-sm overflow-hidden flex flex-column flex-center text-center section11 animate">
-                    <h2>contact</h2>
-                </div>
-            </div>
-        </main>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="form-status"></p> <!-- Status message placeholder -->
     </div>
 
-    <footer class="llbxdll-footer">
-        <div class="container">
-            <p class="text-sm"></p>
-        </div>
-    </footer>
+    <!-- EmailJS Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        emailjs.init("6U7D2I9QkVCCNf_9k"); // Replace "YOUR_PUBLIC_KEY" with your actual Public Key
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contact-form");
+            const status = document.getElementById("form-status");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Send the form data via EmailJS
+                emailjs.sendForm(
+                    "service_xk3nfr8", // Replace with your Service ID
+                    "template_3cyhxvq", // Replace with your Template ID
+                    this
+                )
+                .then(() => {
+                    status.textContent = "Message sent successfully!";
+                    status.style.color = "green";
+                    form.reset(); // Reset the form fields
+                })
+                .catch((error) => {
+                    console.error("Failed to send message:", error);
+                    status.textContent = "Failed to send message. Please try again.";
+                    status.style.color = "red";
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -3,7 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/footer.html')
         .then(response => response.text())
         .then(data => {
-            document.body.insertAdjacentHTML('beforeend', data);
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            if (footerPlaceholder) {
+                footerPlaceholder.innerHTML = data; // Load footer into the placeholder
+            } else {
+                console.warn('Footer placeholder not found.');
+            }
         })
         .catch(error => {
             console.error('Error loading footer:', error);

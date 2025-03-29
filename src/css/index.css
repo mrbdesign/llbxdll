@@ -183,6 +183,15 @@ a {
     gap: var(--mobile-gutter);
 }
 
+/* Grid Items Hover Effect */
+.grid .section {
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.grid .section:hover {
+    transform: scale(1.1); /* Increase scale by 10% */
+}
+
 /* Spacing */
 .p-300 {
     padding: var(--sp-300);
@@ -426,30 +435,36 @@ a {
     }
 }
 
-/* Footer Styles */  /*  <---- ADD THE CODE HERE  */
+
+/* Footer Styles */
+html, body {
+    height: 100%; /* Ensure the body and html take up the full height */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-wrapper {
+    flex: 1; /* Allow the page wrapper to grow and push the footer down */
+    display: flex;
+    flex-direction: column;
+}
+
 .llbxdll-footer {
     background-color: black;
-    height: 50px;
-    color: white;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
     width: 100%;
-    margin: 0;
-    padding: 0; /* Remove top padding */
-    position: relative;
-    bottom: 0; /* Reset bottom position */
+    height: 75px; /* Set the footer height */
+    padding: 0; /* Remove padding */
+    margin-top: auto; /* Push footer to the bottom when content is short */
 }
 
-.llbxdll-footer .container {
-    height: auto; /* Allow container to adjust to content */
-    text-align: center;
-    margin-bottom: 20px; /* Move the text up by 20px */
-}
-
-.llbxdll-footer .text-sm {
-    color: white;
-    position: static; /* Remove relative positioning */
+.llbxdll-footer img {
+    height: 50px; /* Adjust the image height */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
 }
 
 /* Base class for sections - visible by default */
@@ -603,54 +618,52 @@ main.grid {
     margin-top: 20px;
 }
 
-/* llbxdll-navbar styles (Direct Integration) */
+
+/* Navbar Styles */
 .llbxdll-navbar {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: #FFC300; /* Added background color */
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #FFC300; /* Background color */
+    padding: 1rem 0; /* Adjust vertical spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .llbxdll-navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    display: flex;
+    justify-content: space-between; /* Space between left and right elements */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .llbxdll-navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-  flex-grow: 0; /* Added flex-grow: 0 */
+    font-size: 1.65rem; /* Increase font size by 10% (original was 1.5rem) */
+    font-weight: bold;
+    text-decoration: none;
+    color: #333; /* Text color for the website title */
+    letter-spacing: -0.05em; /* Adjust kerning to -50 (em equivalent) */
 }
 
-.llbxdll-navbar-nav {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  justify-content: flex-end; /* Added justify-content: flex-end */
-  align-items: center;      /* Added align-items: center */
-  margin-left: auto;        /* Added margin-left: auto */
+.llbxdll-current-page {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #555; /* Text color for the current page title */
 }
 
-.llbxdll-navbar-nav li {
-  margin-left: 1.5rem;
-}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .llbxdll-navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.llbxdll-nav-link {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease;
-  padding: 0.5rem 1rem; /* Added padding */
+    .llbxdll-current-page {
+        margin-top: 0.5rem;
+    }
 }
 
 .llbxdll-nav-link:hover {
