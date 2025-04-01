@@ -181,16 +181,14 @@ a {
     grid-template-columns: 1fr;
     gap: var(--mobile-gutter);
 }
-
-/* Grid Items Hover Effect */
-.grid .section {
-    transition: transform 0.3s ease; /* Smooth scaling effect */
-}
-
-.grid .section:hover {
-    transform: scale(1.1); /* Increase scale by 10% */
-}
-
+/* Grid Items Effect */
+#page-wrapper .grid > div {
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  #page-wrapper .grid > div:hover {
+    background-color: #ff3399; /* Change background color to pink */
+  }
 /* Spacing */
 .p-300 {
     padding: var(--sp-300);
@@ -480,6 +478,11 @@ html, body {
     height: 50px; /* Set the image height */
     width: auto; /* Maintain aspect ratio */
     display: block;
+    transition: transform 0.3s ease; /* Add a smooth transition */
+  }
+  
+  .llbxdll-footer img:hover {
+    transform: scale(1.2); /* Scale up to 110% on hover */
   }
   
   .social-icons {
@@ -641,8 +644,12 @@ main.grid {
     height: auto;
     display: block;
     margin: 0 auto;
-}
-
+    transition: transform 0.3s ease; /* Add a smooth transition */
+  }
+  
+  .section1 img:hover {
+    transform: scale(1.1); /* Scale up to 110% on hover */
+  }
 /* Add cursor pointer and hover effect to sections */
 [class*="section"] {
     cursor: pointer;
@@ -691,7 +698,7 @@ main.grid {
 .llbxdll-current-page {
     font-size: 1.25rem;
     font-weight: 500;
-    color: #555; /* Text color for the current page title */
+    color: white; /* Text color for the current page title */
 }
 
 /* Mobile Responsiveness */
