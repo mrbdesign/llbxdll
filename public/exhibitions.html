@@ -10,14 +10,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <script type="module" src="src/js/index.js"></script>
-    <title>Mr.Brian Design</title>
+    <title>Page Title - Mr.Brian Design</title>
     <link rel="stylesheet" href="src/css/index.css">
 </head>
 
-<body data-page-title="">
-    <!-- Navbar Placeholder -->
-    <div id="navbar-placeholder"></div>
+<body>
+    <!-- Navbar -->
+    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+            <div class="llbxdll-current-page text-xl font-bold">exhibitions</div>
+        </div>
+    </nav>
 
+    <!-- Page Wrapper -->
     <div id="page-wrapper">
         <main class="container desktop-p" style="padding-top: 90px;">
             <h1 class="text-center" style="margin-bottom: 50px;">exhibitions</h1>
@@ -26,35 +32,12 @@
         </main>
     </div>
 
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Load Navbar
-            fetch('/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-placeholder').innerHTML = data;
-
-                    // Set the current page title dynamically
-                    const pageTitle = document.body.getAttribute('data-page-title');
-                    if (pageTitle) {
-                        const currentPageElement = document.querySelector('.llbxdll-current-page');
-                        if (currentPageElement) {
-                            currentPageElement.textContent = pageTitle;
-                        }
-                    }
-                });
-
-            // Load Footer
-            fetch('/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                });
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="llbxdll-footer">
+        <div class="container">
+            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
+        </div>
+    </footer>
 </body>
 
 </html>

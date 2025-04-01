@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <title>Mr.Brian Design</title>
+    <title>Contact - Mr.Brian Design</title>
     <link rel="stylesheet" href="src/css/index.css">
     <style>
         /* Styling for the contact form */
@@ -18,9 +18,15 @@
             background-color: #121212; /* Dark background */
             color: white;
             display: flex;
+            flex-direction: column; /* Ensure navbar and footer layout */
+            min-height: 100vh; /* Full height for sticky footer */
+        }
+
+        #page-wrapper {
+            flex: 1; /* Allow the content to grow and push the footer down */
+            display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
 
         .contact-card {
@@ -79,36 +85,48 @@
     </style>
 </head>
 
-<body data-page-title="contact">
-    <!-- Contact Form Card -->
-    <div class="contact-card">
-        <h1>What's Up?</h1>
-        <form id="contact-form">
-            
-            <!-- Name Field -->
-            <label for="name">name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+<body>
+    <!-- Navbar -->
+    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+            <div class="llbxdll-current-page text-xl font-bold">Contact</div>
+        </div>
+    </nav>
 
-            <!-- Email Field -->
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+        <!-- Contact Form Card -->
+        <div class="contact-card">
+            <h1>What's Up?</h1>
+            <form id="contact-form">
+                <label for="name">name</label>
+                <input type="text" id="name" name="name" placeholder="" required>
 
-            <!-- Message Field -->
-            <label for="message">message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="" required>
 
-            <!-- Submit Button -->
-            <button type="submit">Send Message</button>
-        </form>
-        <!-- Status Message -->
-        <p id="form-status"></p>
+                <label for="message">message</label>
+                <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="form-status"></p> <!-- Status message placeholder -->
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="llbxdll-footer">
+        <div class="container">
+            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
+        </div>
+    </footer>
 
     <!-- EmailJS Integration -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS with your public key
-        emailjs.init("6U7D2I9QkVCCNf_9k"); // Replace YOUR_PUBLIC_KEY with your actual public key
+        // Initialize EmailJS with your Public Key
+        emailjs.init("6U7D2I9QkVCCNf_9k"); // Replace "YOUR_PUBLIC_KEY" with your actual Public Key
 
         document.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("contact-form");

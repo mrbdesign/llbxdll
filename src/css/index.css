@@ -23,8 +23,7 @@ body {
     font-size: var(--fs-300);
     line-height: var(--lh-400);
     color: var(--clr-white);
-    /* ENSURE THIS LINE IS REMOVED: padding: var(--sp-400) var(--sp-200); */
-    background-image: radial-gradient(at top right, black, hsl(256, 67%, 30%));
+    background-color: red !important; /* Force the background to be black */
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -435,36 +434,45 @@ a {
     }
 }
 
-
-/* Footer Styles */
+/* Ensure the body and html take up the full height */
 html, body {
-    height: 100%; /* Ensure the body and html take up the full height */
+    height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
+/* Make the page wrapper grow to fill available space */
 #page-wrapper {
     flex: 1; /* Allow the page wrapper to grow and push the footer down */
     display: flex;
     flex-direction: column;
 }
 
+/* Footer Styles */
 .llbxdll-footer {
-    background-color: black;
+    background-color: black; /* Ensure the footer has a black background */
     display: flex;
     justify-content: center; /* Center the image horizontally */
     align-items: center; /* Center the image vertically */
     width: 100%;
-    height: 75px; /* Set the footer height */
-    padding: 0; /* Remove padding */
-    margin-top: auto; /* Push footer to the bottom when content is short */
+    height: 150px; /* Set a fixed height for the footer */
+    padding: 0; /* Remove any padding */
+    margin-top: auto; /* Push the footer to the bottom when content is short */
 }
 
 .llbxdll-footer img {
-    height: 50px; /* Adjust the image height */
-    width: auto; /* Maintain aspect ratio */
-    display: block;
+    height: 50px; /* Set the image height to 50px */
+    width: auto; /* Maintain the aspect ratio */
+    display: block; /* Ensure the image is displayed as a block element */
+    
+}
+
+/* Remove any gradient or extra space above the footer */
+body {
+    margin: 0; /* Ensure no margin on the body */
+    padding: 0; /* Ensure no padding on the body */
+    background: none; /* Remove any background gradient */
 }
 
 /* Base class for sections - visible by default */
@@ -696,4 +704,30 @@ main.grid {
 
    
     
+    .contact-card input,
+.contact-card textarea {
+    width: calc(100% - 40px);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333333; /* Dark gray fields */
+    color: white; /* White text in fields */
+    caret-color: white; /* White caret (cursor) */
+}
+
+.contact-card textarea {
+    resize: none; /* Prevent resizing */
+}
+
+/* Ensure the contact card is not cropped by the navbar */
+@media (max-width: 768px) {
+    #page-wrapper {
+        padding-top: 100px; /* Add padding to account for the fixed navbar height */
+    }
+
+    .contact-card {
+        margin-top: 1rem; /* Add some spacing below the navbar */
+    }
+}
 }
