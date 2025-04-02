@@ -13,12 +13,24 @@ This repository contains the code for the Mr.Brian Design website. It showcases 
 *   **Footer:** A consistent footer with social media links.
 *   **Responsive Design:** The website is designed to be responsive and work well on different screen sizes.
 *   **Section Click Handling:** Clickable sections that navigate to dedicated pages.
+*   **Customizable Background Gradient:** Users can dynamically change the background gradient of the website using two interactive color pickers.
+
+## Color Picker Functionality
+
+The website features two color pickers that allow users to customize the background gradient of the main page.
+
+### How to Use
+
+1.  Use the first color picker (left) to select the bottom color of the vertical gradient.
+2.  Use the second color picker (right) to select the top color of the vertical gradient.
+
+The background will update automatically as you select new colors. The color pickers provide a fun and interactive way to personalize the website's appearance.
 
 ## Technologies Used
 
 *   **HTML:** The structure and content of the website.
 *   **CSS:** Styling and layout, including custom properties (CSS variables), flexbox, and grid.
-*   **JavaScript:** Interactive elements, animations, and dynamic content loading.
+*   **JavaScript:** Interactive elements, animations, dynamic content loading, and color picker functionality.
 *   **Git:** Version control.
 
 ## Setup Instructions
@@ -57,7 +69,7 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 
 MIT License
 
-Copyright (c) [Year] [Your Name]
+Copyright (c) \[Year] \[Your Name]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
