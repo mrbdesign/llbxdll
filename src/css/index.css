@@ -871,3 +871,19 @@ main.grid {
 .section11 h2:hover {
   transform: scale(1.1);
 }
+
+.english-text p,
+.japanese-text p {
+  text-indent: 20px; /* Add indentation to the first line of each paragraph */
+  margin-bottom: 10px; /* Add a line break after each paragraph */
+
+  .about-image {
+    transition: transform 0.3s ease; /* Add a smooth transition */
+  }
+  
+  .about-image:hover {
+    transform: scale(1.15); /* Scale up to 115% on hover */
+  }
+  
+}
+

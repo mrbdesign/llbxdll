@@ -2,49 +2,136 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="src/js/index.js"></script>
+  <title>about - Mr.Brian Design</title>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for about page */
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .about-image {
+      width: 300px; /* Reverted to original size */
+      border-radius: 8px;
+      align-self: center;
+      margin-bottom: 50px; /* Add 50px padding between image and text */
+      transition: transform 0.3s ease; /* Add a smooth transition */
+    }
+
+    .about-image:hover {
+      transform: scale(1.15); /* Scale up to 115% on hover */
+    }
+
+    .about-text {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .english-text,
+    .japanese-text {
+      flex: 1;
+    }
+
+    .english-text p,
+    .japanese-text p {
+      text-indent: 20px;
+      margin-bottom: 10px;
+      transition: color 0.3s ease; /* Add a smooth transition */
+    }
+
+    .english-text p:hover,
+    .japanese-text p:hover {
+      color: yellowgreen; /* Change text color to yellow-green on hover */
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      .about-text {
+        flex-direction: column;
+      }
+
+      .about-image {
+        width: 100%;
+        max-width: 300px; /* Reverted to original size */
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">about</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">Page Title</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">about</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 40px;">
+      <h1 class="text-center" style="margin-bottom: 40px;">About Mr. Brian</h1>
+
+      <div class="about-container">
+        <img src="/src/assets/images/brian-1.png" alt="Mr. Brian Design" class="about-image">
+        <div class="about-text">
+          <div class="english-text">
+            <p>Mr. Brian Design is a prodigious American artist and designer with an innate visual talent, honed through formal fine arts training and years of creative exploration.</p>
+            <p>At just 16 years old, Brian achieved commercial success by screen printing and selling original T-shirts during high school. His journey later led to earning a Bachelor of Fine Arts from the State University of New York.</p>
+            <p>A versatile creator, Brian began his career as a product designer for baby and preschool toys, crafting charming characters beloved by children and parents alike. Simultaneously, he pioneered the street culture and fashion scene, creating captivating original T-shirts, stickers, wheat-paste street art, and trailblazing the American vinyl art figure movement. Notably, he released handmade resin figures under the alias "Bufalo Club" in 1999.</p>
+            <p>In 2001, Brian collaborated with DJ DB and Breakbeat Science to introduce TECH HEADZ—the first-ever independent, limited edition vinyl art toys inspired by Technics® turntables. His creativity extended to designing toys for notable brands like Alife, Faile, and Biz Markie.</p>
+            <p>In 2005, Brian relocated to Japan, where he worked as a freelance toy designer for Bandai and other North American toy giants like Hasbro and Fisher Price until 2009. That year marked his rebranding as Mr. Brian Design, focusing on edutainment—creating coloring books, textbooks, worksheets, and animations.</p>
+            <p>From 2009 to 2016, Brian collaborated with Knee High Media (Mammoth School) on compelling projects while producing original artworks and partnering with fashion brands like Ships and Stussy (2014-2019). He also contributed to local businesses in Kagoshima, Japan, such as KOGU bike shop and Voila Coffee.</p>
+            <p><b>Expanding Horizons Since 2023<br><br></b></p>
+            <p>In 2023, Brian taught himself 3D design using Blender 3D with the help of YouTube tutorials—a skill he quickly mastered thanks to his technical background in product design for kids' toys. Inspired by his work in the preschool toy industry and youth culture combined with street fashion, he launched LITTLE WORLD, a brand featuring unique characters that now serve as ambassadors for his school project, MUKIMU Workshop.</p>
+            <p>By 2024, Brian expanded into full-stack development and app building. He developed boutique Web3 apps such as PIXEL WORLD, a gamified NFT project featuring staking apps where collectors could earn reward tokens redeemable for digital collectibles. He even built a marketplace (trade-pixel.world) where users could buy and sell NFTs from his collection and those of community collaborators.</p>
+            <p>Transitioning into full-stack development has been both challenging and rewarding for Brian. With the support of AI tools and online resources like YouTube tutorials, he overcame obstacles like debugging complex systems while staying ahead of industry trends. His background in art and design fueled his approach to Web3 app development by breaking barriers imposed by traditional software limitations—motivated by a desire for creative and digital sovereignty.</p>
+          </div>
+          <div class="japanese-text">
+            <p>Mr. Brian Designは、幼少期から視覚的才能を磨き、正式な美術教育を受けてきたアメリカの天才アーティスト兼デザイナーです。</p>
+            <p>16歳の時、高校生としてオリジナルTシャツをスクリーンプリントし販売することで商業的成功を収めました。その後、ニューヨーク州立大学で美術学士号を取得しました。</p>
+            <p>多才なクリエイターであるBrianは、赤ちゃんや幼児向けおもちゃの製品デザイナーとしてキャリアをスタートし、子供たちに愛される魅力的なキャラクターデザインを制作しました。同時にストリートカルチャーやファッションシーンにも進出し、オリジナルTシャツ、ステッカー、小麦ペーストアートを創造し、アメリカのビニールアートフィギュアムーブメントの先駆者となりました。特に1999年には「Bufalo Club」という名前で手作り樹脂フィギュアを発売しました。</p>
+            <p>2001年にはDJ DBとBreakbeat Scienceとのコラボレーションにより、Technics®ターンテーブルにインスパイアされた初の限定版バイナルアートトイ「TECH HEADZ」を発表しました。また、Alife、Faile、Biz Markieなどのブランドやアーティスト向けにおもちゃデザインも手掛けました。</p>
+            <p>2005年、日本へ移住しバンダイのフリーランスおもちゃデザイナーとして活動を開始。その後、HasbroやFisher Priceなど北米のおもちゃメーカーとも協力し2009年まで活動しました。同年、「Mr.Brian Design」として再出発し、ぬりえ本や教科書、ワークシートなど印刷物やアニメーション制作を中心としたエデュテインメント分野に注力しました。</p>
+            <p>2009年から2016年までKnee High Media（Mammoth School）とのプロジェクトに取り組みながらオリジナル作品を制作。「Ships」などのファッションブランドとの協業やStussy（2014-2019）との成功したパートナーシップも維持しました。また鹿児島の地元企業であるKOGU自転車店やVoila Coffeeとも提携しています。</p>
+            <p><b>2023年以降の新たな挑戦<br><br></b></p>
+            <p>2023年にはYouTubeチュートリアルを活用してBlender 3Dで独学で3Dデザインを習得しました。このスキルは子供向けおもちゃ製品デザインの技術的背景があったため迅速にマスターできました。そして幼児向け産業と若者文化・ストリートファッションからインスピレーションを得て「LITTLE WORLD」ブランドを立ち上げました。このブランドのキャラクターは現在、「MUKIMU Workshop」という学校プロジェクトのアンバサダーとして活躍しています。</p>
+            <p>2024年にはフルスタック開発とアプリ構築に進出し、多くのWeb3関連ブティックアプリケーションを開発しました。その中にはNFTプロジェクト「PIXEL WORLD」などが含まれます。このプロジェクトではステーキングアプリが導入され、コレクターが報酬トークンを獲得してデジタルコレクタブルと交換できる仕組みが提供されました。またNFTマーケットプレイス（trade-pixel.world）も構築し、自身やコミュニティ内のコレクション売買が可能になりました。</p>
           </div>
         </div>
-      </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="llbxdll-footer">
+    <div class="container">
+      <div class="footer-content">
+        <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
+        <div class="social-icons">
+          <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
+            <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
+          </a>
+          <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
+            <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
