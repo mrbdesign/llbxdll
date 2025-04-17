@@ -2,49 +2,220 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>Pixel World - Mr.Brian Design</title>
+  <meta name="description" content="Explore PIXEL WORLD, a generative art collection and Web3 brand by Mr.Brian Design.">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="Pixel World - Mr.Brian Design">
+  <meta property="og:description" content="Explore PIXEL WORLD, a generative art collection and Web3 brand by Mr.Brian Design.">
+  <meta property="og:image" content="/src/assets/images/cards/PW-Card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/pixel_world">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pixel World - Mr.Brian Design">
+  <meta name="twitter:description" content="Explore PIXEL WORLD, a generative art collection and Web3 brand by Mr.Brian Design.">
+  <meta name="twitter:image" content="/src/assets/images/cards/PW-Card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="PIXEL WORLD, Mr.Brian Design, Generative Art, Web3, NFT, Staking, Marketplace">
+  <meta name="author" content="Mr.Brian Design">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="src/js/index.js"></script>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for pixel world page */
+    .pixel-world-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+      /* Two columns */
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .pixel-world-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pixel-world-image {
+      width: 100%;
+      /* Make images fill the grid item */
+      max-width: 450px;
+      /* Set a maximum width */
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .pixel-world-image:hover {
+      transform: scale(1.15);
+    }
+
+    .pixel-world-item h2 {
+      margin-top: 20px;
+    }
+
+    .pixel-world-item p {
+      margin-top: 10px;
+      max-width: 450px;
+      /* Limit the width of the description */
+      margin-left: auto;
+      /* Center the description */
+      margin-right: auto;
+      /* Center the description */
+    }
+
+    .pixel-world-item p:hover {
+      color: yellowgreen;
+      /* Change color to yellowgreen on hover */
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      .pixel-world-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+      }
+    }
+
+    .pixel-world-title-location {
+      font-size: 0.9em;
+      /* 10% smaller */
+      font-weight: normal;
+    }
+
+    .pixel-world-link {
+      color: yellowgreen;
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    .pixel-world-link:hover {
+      color: white;
+    }
+
+    /* Styles for pixel-globeski.png */
+    .pixel-globeski-image {
+      max-width: 27%;
+      /* Make image responsive and scale to 27% */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.3s ease;
+    }
+
+    .pixel-globeski-image:hover {
+      transform: scale(1.1);
+    }
+
+    /* Styles for store.png */
+    .store-image {
+      width: 50%;
+      max-width: 450px;
+      height: auto;
+      display: block;
+      margin: 30px auto;
+      transition: transform 0.3s ease;
+      padding-top: 40px;
+    }
+
+    .store-image:hover {
+      transform: scale(1.1);
+    }
+
+    /* Style for bottom description */
+    .pixel-world-bottom-description {
+      padding-top: 80px;
+      max-width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+    }
+
+    .pixel-world-bottom-description:hover {
+      color: yellowgreen;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">pixel world</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">pixel world</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">pixel world</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 90px;">
+      <!-- Increased top padding -->
+      <h1 class="text-center" style="margin-bottom: 40px;">PIXEL WORLD by Mr. Brian Design</h1>
+      <img src="/src/assets/images/pixel-globeski.png" alt="PIXEL WORLD by Mr. Brian Design"
+        class="pixel-globeski-image" style="margin-bottom: 0px;">
+      <h2 class="text-center" style="margin-top: 10px; margin-bottom: 50px;">Good Smile is Good Smile</h2>
+
+      <div class="pixel-world-grid">
+        <!-- pixel world 1: PW-01.gif -->
+        <div class="pixel-world-item">
+          <img src="/src/assets/images/PW-01.gif" alt="PW-01" class="pixel-world-image">
+          <h2>Pixel Animations</h2>
+          <p></p>
         </div>
-      </footer>
+
+        <!-- pixel world 2: PW-02.gif -->
+        <div class="pixel-world-item">
+          <img src="/src/assets/images/PW-02.gif" alt="PW-02" class="pixel-world-image">
+          <h2>Staking App</h2>
+          <p></p>
+        </div>
+
+        <!-- pixel world 3: PW-03.png -->
+        <div class="pixel-world-item">
+          <a href="https://trade-pixel.world">
+            <img src="/src/assets/images/PW-03.png" alt="PW-03" class="pixel-world-image">
+            <h2>Marketplace</h2>
+            <p></p>
+          </a>
+        </div>
+
+        <!-- pixel world 4: PW-04.gif -->
+        <div class="pixel-world-item">
+          <img src="/src/assets/images/PW-04.gif" alt="PW-04" class="pixel-world-image">
+          <h2>Generative Art</h2>
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Bottom Description -->
+      <p class="pixel-world-bottom-description"><a href="https://trade-pixel.world"
+          style="color: inherit; text-decoration: none;"><strong>PIXEL WORLD</strong></a> by Mr.Brian Design is a
+        generative art collection and web3 brand marking his expansion into app development. The art is randomly
+        generated from individual traits on a 32x32 pixel canvas. Collectors could earn 'PERX' reward tokens in a
+        gamified mint by staking their NFTs in a custom app, redeemable for additional NFTs and items. Mr.Brian
+        Design also created an artist-owned marketplace for PIXEL WORLD and other collections, bypassing platform
+        fees and third-party constraints.<br><br>ミスター・ブライアン・デザインによるPIXEL WORLDは、彼のアプリ開発への進出を示す、ジェネラティブアートコレクションであり、Web3ブランドです。アートは32x32ピクセルのキャンバス上で個々の特性からランダムに生成されます。ゲーミフィケーションされたミントでは、コレクターはNFTをカスタムステーキングアプリにロックすることで「PERX」報酬トークンを獲得でき、追加のNFTやアイテムと交換可能でした。また、Mr.Brian Designは、プラットフォーム手数料や第三者の制約なしに、PIXEL WORLDやその他のコレクションを売買できる、アーティストが所有・運営するマーケットプレイスを作成しました。</p>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

@@ -2,48 +2,280 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>Little World - Mr.Brian Design</title>
+  <meta name="description" content="Discover LITTLE WORLD by Mr.Brian Design, a fashionable character collection celebrating youth culture.">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="Little World - Mr.Brian Design">
+  <meta property="og:description" content="Discover LITTLE WORLD by Mr.Brian Design, a fashionable character collection celebrating youth culture.">
+  <meta property="og:image" content="/src/assets/images/cards/LW-Card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/little_world">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Little World - Mr.Brian Design">
+  <meta name="twitter:description" content="Discover LITTLE WORLD by Mr.Brian Design, a fashionable character collection celebrating youth culture.">
+  <meta name="twitter:image" content="/src/assets/images/cards/LW-Card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="LITTLE WORLD, Mr.Brian Design, Fashion, Characters, Youth Culture, Collectibles, Digital Art, Gaming">
+  <meta name="author" content="Mr.Brian Design">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="src/js/index.js"></script>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for little world page */
+    .little-world-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      /* Responsive columns */
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .little-world-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .little-world-image {
+      width: 100%;
+      /* Make images fill the grid item */
+      max-width: 450px;
+      /* Set a maximum width */
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .little-world-image:hover {
+      transform: scale(1.15);
+    }
+
+    .little-world-item h2 {
+      margin-top: 20px;
+    }
+
+    .little-world-item p {
+      margin-top: 10px;
+      max-width: 450px;
+      /* Limit the width of the description */
+      margin-left: auto;
+      /* Center the description */
+      margin-right: auto;
+      /* Center the description */
+    }
+
+    .little-world-item p:hover {
+      color: yellowgreen;
+      /* Change color to yellowgreen on hover */
+    }
+
+    /* Two rows of two items, last item centered */
+    @media (min-width: 769px) {
+      .little-world-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        /* Two columns */
+        gap: 40px;
+        padding: 20px;
+      }
+
+      /* Center the last item */
+      .little-world-item:last-child {
+        grid-column: 1 / span 2;
+        /* Span both columns */
+        width: fit-content;
+        /* Adjust width to content */
+        margin: 0 auto;
+        /* Center horizontally */
+      }
+
+      /* Force items into rows */
+      .little-world-item:nth-child(1),
+      .little-world-item:nth-child(2) {
+        grid-row: 1;
+      }
+
+      .little-world-item:nth-child(3),
+      .little-world-item:nth-child(4) {
+        grid-row: 2;
+      }
+
+      .little-world-item:nth-child(5) {
+        grid-row: 3;
+      }
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      .little-world-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+      }
+    }
+
+    .little-world-title-location {
+      font-size: 0.9em;
+      /* 10% smaller */
+      font-weight: normal;
+    }
+
+    .little-world-link {
+      color: yellowgreen;
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    .little-world-link:hover {
+      color: white;
+    }
+
+    /* Styles for globeski.png */
+    .globeski-image {
+      max-width: 25%;
+      /* Reduced from 50% to 25% */
+      max-height: 225px;
+      /* Reduced from 450px to 225px */
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .globeski-image:hover {
+      transform: scale(1.1);
+    }
+
+    /* Styles for LW-Banner-wt.png */
+    .lw-banner-image {
+      width: 100%;
+      /* Full width */
+      display: block;
+      margin: 20px auto;
+      /* Center the image */
+    }
+
+    .lw-banner-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer Styles (applied to all screen sizes) */
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-icons img {
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Style for bottom description */
+    .little-world-bottom-description {
+      padding-top: 80px;
+      max-width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+    }
+
+    .little-world-bottom-description:hover {
+      color: yellowgreen;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">little world</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">little world</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">little world</div>
     </div>
+  </nav>
 
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 90px;">
+      <!-- Increased top padding -->
+      <h1 class="text-center" style="margin-bottom: 40px;">LITTLE WORLD by Mr. Brian Design</h1>
+      <img src="/src/assets/images/globeski.png" alt="LITTLE WORLD by Mr. Brian Design" class="globeski-image">
+      <h2 class="text-center" style="margin-bottom: 50px;">GOOD SMILE is GOOD STYLE</h2>
+
+      <div class="little-world-grid">
+        <!-- little world 1: LW-00 -->
+        <div class="little-world-item">
+          <img src="/src/assets/images/LW-00.png" alt="LW-00" class="little-world-image">
+          <h2>Collectibles</h2>
+          <p></p>
         </div>
-      </footer>
+
+        <!-- little world 2: LW-01 -->
+        <div class="little-world-item">
+          <img src="/src/assets/images/LW-01.png" alt="LW-01" class="little-world-image">
+          <h2>Digital Fine Art</h2>
+          <p></p>
+        </div>
+
+        <!-- little world 3: LW-02 -->
+        <div class="little-world-item">
+          <img src="/src/assets/images/LW-02.png" alt="LW-02" class="little-world-image">
+          <h2>Fashion</h2>
+          <p></p>
+        </div>
+
+        <!-- little world 4: LW-03 -->
+        <div class="little-world-item">
+          <img src="/src/assets/images/LW-03.png" alt="LW-03" class="little-world-image">
+          <h2>Gaming</h2>
+          <p></p>
+        </div>
+
+        <!-- little world 5: LW-04 -->
+        <div class="little-world-item">
+          <img src="/src/assets/images/LW-04.png" alt="LW-04" class="little-world-image">
+          <h2>Digital Collectibles</h2>
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Bottom Description -->
+      <p class="little-world-bottom-description"><strong>LITTLE WORLD</strong> by Mr.Brian Design, embodies a "GOOD
+        STYLE is GOOD SMILE" ethos within a fashionable character collection that celebrates youth culture's diversity
+        and encourages a "Live Your BestLife" mindset. Rooted in tactile, fine art collages and showcased globally in
+        digital art exhibitions, LITTLE WORLD began as a 3D character brand in web3, offering engaging experiences
+        across digital collectibles, gaming, AR/XR, immersive art, stationery, and educational media, and creating
+        collectibles like physical trading cards for a worldwide audience, while its game avatars have captivated
+        discerning gamers.<br><br>ミスター・ブライアン・デザインによる<strong>LITTLE WORLD</strong>は、「GOOD STYLE is GOOD SMILE」という理念を体現し、若者文化の多様性を称え、「Live Your BestLife」の精神を奨励するファッショナブルなキャラクターコレクションです。触覚的なファインアートコラージュをルーツとし、デジタルアート展示会で世界的に紹介されている<strong>LITTLE WORLD</strong>は、Web3で3Dキャラクターブランドとして始まり、デジタルコレクタブル、ゲーム、AR/MR、没入型アート、文具、教育メディアなど、様々なプラットフォームで魅力的な体験を提供しています。世界中のオーディエンス向けにトレーディングカードのようなグッズを制作する一方、そのゲームアバターは世界中のゲーム愛好家を魅了しています。</p>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

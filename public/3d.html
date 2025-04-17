@@ -2,49 +2,188 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>3D - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>3D - Mr.Brian Design</title>
+  <meta name="description" content="3D Design and Hard Surface Modeling by Mr.Brian Design">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="3D Design - Mr.Brian Design">
+  <meta property="og:description" content="Explore 3D design and hard surface modeling by Mr.Brian Design.">
+  <meta property="og:image" content="/src/assets/images/cards/3D-Card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/3D">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="3D Design - Mr.Brian Design">
+  <meta name="twitter:description" content="Explore 3D design and hard surface modeling by Mr.Brian Design.">
+  <meta name="twitter:image" content="/src/assets/images/cards/3D-Card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="3D Design, Hard Surface Modeling, Blender, MagicaVoxel, VRM, Professional Works">
+  <meta name="author" content="Mr.Brian Design">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Works Container */
+    .works-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Works Item */
+    .works-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      perspective: 1000px;
+      /* Enable 3D perspective */
+    }
+
+    /* Works Image */
+    .works-image {
+      width: 85%;
+      /* Reduced by 15% */
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.6s ease;
+      /* Smooth transition for 3D effect */
+    }
+
+    .works-image:hover {
+      transform: rotateY(360deg);
+      /* Spin effect on hover */
+    }
+
+    /* Works Title */
+    .works-title {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Description Container */
+    .description-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      margin: 20px auto;
+      max-width: 900px;
+    }
+
+    .description {
+      text-align: center;
+      transition: color 0.3s ease;
+      width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .description:hover {
+      color: yellowgreen;
+    }
+
+    @media (max-width: 768px) {
+      .works-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .works-item {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .works-image {
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+      }
+
+      .description-container {
+        flex-direction: column;
+      }
+
+      .description {
+        width: 100%;
+        margin: 10px auto;
+      }
+    }
+
+    /* Wireframe Image Style */
+    .wireframe-image {
+      width: 100%; /* Make it the same width as the container */
+      max-width: 900px; /* Match the max-width of the description container */
+      display: block; /* Remove any extra spacing */
+      margin: 20px auto; /* Center the image horizontally and add some margin */
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">3D</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">3D</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">3D</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 100px;">
+      <h1 class="text-center" style="margin-bottom: 40px;">3D Design</h1>
+
+      <!-- Works Section -->
+      <div class="works-container">
+        <div class="works-item">
+          <img src="/src/assets/images/avatar.gif" alt="Avatar" class="works-image">
+          <h2 class="works-title">Avatar</h2>
         </div>
-      </footer>
+        <div class="works-item">
+          <img src="/src/assets/images/optical.gif" alt="Optical" class="works-image">
+          <h2 class="works-title">Optical</h2>
+        </div>
+        <div class="works-item">
+          <img src="/src/assets/images/cinematic.gif" alt="Cinematic" class="works-image">
+          <h2 class="works-title">Cinematic</h2>
+        </div>
+      </div>
+
+      <!-- Description Section -->
+      <div class="description-container">
+        <p class="description">Mr.Brian is a self-taught 3D designer specializing in hard surface modeling. With a
+          background in industrial and product design for the toy industry, he excels in Blender 3D and MagicaVoxel,
+          and is skilled in rigging, animation, and VRM workflows.</p>
+        <p class="description">ブライアンは独学の3Dデザイナーで、ハードサーフェスモデリングを専門としています。玩具業界での工業デザインとプロダクトデザインの経験を活かし、BlenderとMagicaVoxelに精通し、リギング、アニメーション、VRMのアバターの制作ができます。</p>
+      </div>
+
+      <!-- Wireframe Image -->
+      <img src="/src/assets/images/wireframe.png" alt="Wireframe" class="wireframe-image">
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="src/js/index.js"></script>
+</body>
+
+</html>

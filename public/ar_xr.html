@@ -2,49 +2,189 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>AR/XR - Mr.Brian Design</title>
+  <meta name="description" content="Explore AR/XR experiences by Mr.Brian Design, including immersive art installations and mixed reality.">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="AR/XR - Mr.Brian Design">
+  <meta property="og:description" content="Explore AR/XR experiences by Mr.Brian Design, including immersive art installations and mixed reality.">
+  <meta property="og:image" content="/src/assets/images/cards/AR-Card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/ar_xr">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AR/XR - Mr.Brian Design">
+  <meta name="twitter:description" content="Explore AR/XR experiences by Mr.Brian Design, including immersive art installations and mixed reality.">
+  <meta name="twitter:image" content="/src/assets/images/cards/AR-Card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="AR, XR, Augmented Reality, Mixed Reality, Mr.Brian Design, Immersive Art, 3D, Filters, Effects">
+  <meta name="author" content="Mr.Brian Design">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <title>AR/XR - Mr.Brian Design</title>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for AR/XR page */
+    body {
+      background-color: #2a1a3d;
+      color: white;
+    }
+
+    .ar-xr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .ar-xr-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      perspective: 1000px;
+      /* Enable 3D perspective */
+    }
+
+    .ar-xr-image {
+      width: 85%;
+      /* Reduced by 15% */
+      max-width: 382px;
+      /* Adjusted for smaller size */
+      border-radius: 8px;
+      transition: transform 0.6s ease;
+      /* Smooth transition for 3D effect */
+    }
+
+    .ar-xr-image:hover {
+      transform: rotateY(360deg);
+      /* Spin effect on hover */
+    }
+
+    .ar-xr-item h2 {
+      margin-top: 20px;
+      color: white;
+    }
+
+    .ar-xr-item p {
+      margin-top: 10px;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+    }
+
+    .ar-xr-item p:hover {
+      color: yellowgreen;
+    }
+
+    .ar-xr-bottom-description {
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      max-width: 734px;
+      /* 30px less than the total width of the images */
+      margin: 0 auto;
+      /* Center the text */
+      transition: color 0.3s ease;
+    }
+
+    .ar-xr-bottom-description:hover {
+      color: yellowgreen;
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      .ar-xr-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ar-xr-bottom-description {
+        max-width: 90%;
+        /* Adjust for smaller screens */
+      }
+    }
+
+    .ar-xr-title-location {
+      font-size: 0.9em;
+      font-weight: normal;
+    }
+
+    .ar-xr-link {
+      color: yellowgreen;
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    .ar-xr-link:hover {
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">ar/xr</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">ar/xr</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">AR/XR</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 90px;">
+      <h1 class="text-center" style="margin-bottom: 40px;">AR/XR</h1>
+
+      <div class="ar-xr-grid">
+        <!-- AR/XR 1: saigo-san -->
+        <div class="ar-xr-item">
+          <img src="/src/assets/images/saigo-san.gif" alt="saigo-san" class="ar-xr-image">
+          <h2>Mr.Brian X Kagoshima</h2>
         </div>
-      </footer>
+
+        <!-- AR/XR 2: immersive -->
+        <div class="ar-xr-item">
+          <img src="/src/assets/images/immersive.gif" alt="immersive" class="ar-xr-image">
+          <h2>Immersive Experiences</h2>
+        </div>
+
+        <!-- AR/XR 3: mixed-reality -->
+        <div class="ar-xr-item">
+          <img src="/src/assets/images/mixed-reality.gif" alt="mixed-reality" class="ar-xr-image">
+          <h2>3D Mixed Reality</h2>
+        </div>
+
+        <!-- AR/XR 4: filters -->
+        <div class="ar-xr-item">
+          <img src="/src/assets/images/filters.gif" alt="filters" class="ar-xr-image">
+          <h2>Filters and Effects</h2>
+        </div>
+      </div>
+
+      <!-- Bottom Description -->
+      <p class="ar-xr-bottom-description">Mr.Brian Design has delivered augmented and mixed reality experiences across
+        diverse platforms and media, including immersive art installations.<br><br>ミスター・ブライアン・デザインは、没入型アートインスタレーションを含む多様なプラットフォームやメディアで、拡張現実および複合現実の体験を提供してきました。</p>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="src/js/index.js"></script>
+</body>
+
+</html>

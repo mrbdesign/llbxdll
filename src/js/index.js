@@ -35,9 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
       observer.observe(section);
     });
-  } else {
-    console.warn('No elements with the class "section" found: Ensure elements with class "section" exist.');
   }
+  // else {
+  //   console.warn('No elements with the class "section" found: Ensure elements with class "section" exist.');
+  // }
 
   // Grid Item Click Handling
   document.querySelectorAll('[class*="section"]').forEach(item => {

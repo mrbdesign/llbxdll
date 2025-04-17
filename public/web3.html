@@ -2,49 +2,223 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>Web3 - Mr.Brian Design</title>
+  <meta name="description" content="Explore Web3 projects by Mr.Brian Design, including NFTs, wearables, and more.">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="Web3 - Mr.Brian Design">
+  <meta property="og:description" content="Explore Web3 projects by Mr.Brian Design, including NFTs, wearables, and more.">
+  <meta property="og:image" content="/src/assets/images/cards/web3-Card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/web3">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web3 - Mr.Brian Design">
+  <meta name="twitter:description" content="Explore Web3 projects by Mr.Brian Design, including NFTs, wearables, and more.">
+  <meta property="twitter:image" content="/src/assets/images/cards/web3-Card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="Web3, NFT, Mr.Brian Design, Crypto, Blockchain, Wearables, Art, Digital Art">
+  <meta name="author" content="Mr.Brian Design">
+
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="src/js/index.js"></script>
+  <title>Web3 - Mr.Brian Design</title>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for web3 page */
+    .web3-container {
+      display: flex;
+      /* Use flexbox for horizontal layout */
+      justify-content: space-around;
+      /* Distribute items evenly */
+      align-items: center;
+      /* Align items vertically */
+      padding: 20px;
+      flex-wrap: wrap;
+      /* Allow items to wrap to the next line */
+    }
+
+    .web3-item {
+      display: flex;
+      flex-direction: column;
+      /* Stack image and title vertically */
+      align-items: center;
+      /* Center content within each item */
+      margin-bottom: 20px;
+      /* Add some space between items */
+    }
+
+    .web3-image {
+      width: 80%;
+      max-width: 300px;
+      /* Adjust max-width as needed */
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      margin-bottom: 20px;
+      /* Add 20px margin below the image */
+    }
+
+    .web3-image:hover {
+      transform: scale(1.1);
+    }
+
+    .web3-title {
+      text-align: center;
+      margin-top: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .web3-title:hover {
+      color: yellowgreen;
+    }
+
+    /* Add hover effect to links */
+    .web3-title a {
+      display: inline-block;
+      /* Make the link a block-level element */
+      transition: transform 0.3s ease;
+      /* Add transition for smooth effect */
+    }
+
+    .web3-title a:hover {
+      transform: scale(1.1);
+      /* Scale up by 10% on hover */
+    }
+
+    /* Footer Styles (applied to all screen sizes) */
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-icons img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .description-paragraph {
+      text-align: center;
+      margin-top: 40px;
+      padding: 0 20px;
+      color: white;
+      /* Ensure text is readable */
+      transition: color 0.3s ease;
+      /* Add transition for smooth effect */
+    }
+
+    .description-paragraph:hover {
+      color: yellowgreen;
+      /* Change color on hover */
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">web3</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">web3</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">Web3</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 90px;">
+      <h1 class="text-center" style="margin-bottom: 40px;">Web3 Projects</h1>
+
+      <div class="web3-container">
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-0.png" alt="web3-0" class="web3-image">
+          <h2 class="web3-title"><a
+              href="https://www.trade-pixel.world/collection/8453/0xdAd823bE6758f0584222A68E82C3e2621C4a952e"
+              target="_blank" rel="noopener noreferrer">LITTLE WORLD PFPs</a></h2>
         </div>
-      </footer>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-1.jpg" alt="web3-1" class="web3-image">
+          <h2 class="web3-title"><a href="https://opensea.io/collection/tanuki-birds" target="_blank"
+              rel="noopener noreferrer">TANUKI BIRDS</a></h2>
+        </div>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-2.jpg" alt="web3-2" class="web3-image">
+          <h2 class="web3-title"><a href="https://www.voxels.com/" target="_blank"
+              rel="noopener noreferrer">VOXELS WEARABLES</a></h2>
+        </div>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-3.jpg" alt="web3-3" class="web3-image">
+          <h2 class="web3-title"><a href="https://badassgorillazombies.com/" target="_blank"
+              rel="noopener noreferrer">BAGZ</a></h2>
+        </div>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-4.png" alt="web3-4" class="web3-image">
+          <h2 class="web3-title"><a href="https://rarible.com/mixedcompany/items" target="_blank"
+              rel="noopener noreferrer">MIXEDCOMPANY</a></h2>
+        </div>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-5.png" alt="web3-5" class="web3-image">
+          <h2 class="web3-title"><a
+              href="https://magiceden.io/collections/ethereum/0xb558c00055b3840a79a5009924abc7f3081344db"
+              target="_blank" rel="noopener noreferrer">COMPANYons</a></h2>
+        </div>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-7.png" alt="web3-7" class="web3-image">
+          <h2 class="web3-title"><a
+              href="https://www.trade-pixel.world/collection/8453/0x7CbDae78ceb1E27Aa6B0588f58D68afa560f6E16"
+              target="_blank" rel="noopener noreferrer">PIXEL WORLD</a></h2>
+        </div>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-8.png" alt="web3-8" class="web3-image">
+          <h2 class="web3-title"><a
+              href="https://www.trade-pixel.world/collection/8453/0xbA297ce86FFd76b9C5EA7EC47b2722B141f9b1Ea"
+              target="_blank" rel="noopener noreferrer">GLASS WORKS</a></h2>
+        </div>
+
+        <div class="web3-item">
+          <img src="/src/assets/images/web3-9.jpg" alt="web3-9" class="web3-image">
+          <h2 class="web3-title"><a
+              href="https://objkt.com/users/tz1Q5XX9uUuwu9PR5PFHqeQUC3NiKNG1mhYE" target="_blank"
+              rel="noopener noreferrer">DAEMONOIDZ</a></h2>
+        </div>
+      </div>
+
+      <p class="description-paragraph">Mr. Brian began his Web3 journey in 2001 as an NFT artist, creating
+        collections across multiple chains and steadily advancing his skills before moving into app development.
+        ブライアン氏は2001年にNFTアーティストとしてWeb3の旅を始め、複数のチェーンでコレクションを制作し、スキルを磨きながらアプリ開発へと進みました。</p>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

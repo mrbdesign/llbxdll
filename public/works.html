@@ -2,49 +2,252 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>Works - Mr.Brian Design</title>
+  <meta name="description" content="Explore selected works by Mr.Brian Design, showcasing collaborations with Stussy, Voila Coffee, Biz Markie, and more.">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="Works - Mr.Brian Design">
+  <meta property="og:description" content="Explore selected works by Mr.Brian Design, showcasing collaborations with Stussy, Voila Coffee, Biz Markie, and more.">
+  <meta property="og:image" content="/src/assets/images/cards/Works-Card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/works">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Works - Mr.Brian Design">
+  <meta name="twitter:description" content="Explore selected works by Mr.Brian Design, showcasing collaborations with Stussy, Voila Coffee, Biz Markie, and more.">
+  <meta property="twitter:image" content="/src/assets/images/cards/Works-Card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="Works, Mr.Brian Design, Stussy, Voila Coffee, Biz Markie, Design, Art, Collaboration">
+  <meta name="author" content="Mr.Brian Design">
+
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="src/js/index.js"></script>
+  <title>Works - Mr.Brian Design</title>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for works page */
+    .works-container {
+      display: flex;
+      /* Use flexbox for horizontal layout */
+      justify-content: space-around;
+      /* Distribute items evenly */
+      align-items: flex-start;
+      /* Align items vertically */
+      padding: 20px;
+    }
+
+    .works-item {
+      display: flex;
+      flex-direction: column;
+      /* Stack image and title vertically */
+      align-items: center;
+      /* Center content within each item */
+    }
+
+    .works-image {
+      width: auto;
+      /* Adjust width automatically */
+      max-width: 100%;
+      height: 450px;
+      /* Set fixed height */
+      object-fit: contain;
+      /* Maintain aspect ratio */
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .works-image:hover {
+      transform: scale(1.1);
+    }
+
+    .works-title {
+      text-align: center;
+      margin-top: 30px;
+      /* Increased margin-top by 20px */
+    }
+
+    /* Add this new style rule */
+    .works-item p {
+      transition: color 0.3s ease;
+      max-width: 640px;
+      /* Ensure paragraph width matches image width minus 20px on each side */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      /* Center the text */
+      padding-left: 10px;
+      /* Add 10px padding to left */
+      padding-right: 10px;
+      /* Add 10px padding to right */
+    }
+
+    .works-item p:hover {
+      color: yellowgreen;
+    }
+
+    /* Styles for Clients.png */
+    .clients-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      /* Move down by 40px (increased from 30px) */
+    }
+
+    .clients-image {
+      width: 42.5%;
+      display: block;
+      margin: 0 auto;
+      /* Center the image */
+    }
+
+    .clients-text {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Add new style rule for clients description */
+    .clients-container p {
+      transition: color 0.3s ease;
+      max-width: 40.5%;
+      /* Adjusted for 20px narrower */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      /* Center the text */
+      padding-left: 10px;
+      /* Add 10px padding to left */
+      padding-right: 10px;
+      /* Add 10px padding to right */
+    }
+
+    .clients-container p:hover {
+      color: yellowgreen;
+    }
+
+    /* Style for the tumblr link */
+    .clients-container a {
+      color: yellowgreen;
+      /* Default color */
+      transition: color 0.3s ease;
+    }
+
+    .clients-container a:hover,
+    .clients-container a:active {
+      color: white;
+      /* Color on hover/active */
+    }
+
+    /* Media Query for Mobile Devices (up to 768px width) */
+    @media (max-width: 768px) {
+      .works-container {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center items horizontally */
+      }
+
+      .works-item {
+        width: 100%;
+        /* Take full width */
+        margin-bottom: 20px;
+        /* Add spacing between items */
+      }
+
+      .works-image {
+        height: auto;
+        /* Remove fixed height */
+        max-width: 100%;
+        /* Take full width */
+        object-fit: cover;
+        /* Cover the area, potentially cropping */
+      }
+
+      .clients-image {
+        width: 80%;
+        /* Take more width on mobile */
+      }
+
+      .works-item p,
+      .clients-container p {
+        max-width: 90%;
+        /* Adjust max-width for mobile */
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">works</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">works</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">works</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 90px;">
+      <h1 class="text-center" style="margin-bottom: 40px;">Selected Works by Mr.Brian Design</h1>
+      <br><br>
+
+      <div class="works-container">
+        <div class="works-item">
+          <img src="/src/assets/images/works-0.png" alt="works-0" class="works-image">
+          <h2 class="works-title">Stussy</h2>
+          <br><br>
+          <p class="text-center">He has worked with Stussy Japan on five capsule collections and
+            special projects spanning several years, with many pieces becoming highly collectible and sought
+            after.<br><br>ブライアンは、数年にわたりStussy Japanと5つ以上のカプセルコレクションや特別プロジェクトでコラボレーションし、多くのアイテムが高い人気とコレクターズアイテムとなっています。<br><br></p>
         </div>
-      </footer>
+
+        <div class="works-item">
+          <img src="/src/assets/images/works-2.png" alt="works-2" class="works-image">
+          <h2 class="works-title">Voila Coffee</h2>
+          <br><br>
+          <p class="text-center">Brian was commissioned by Voila Coffee to design several products, leading
+            to the creation of the 'We Do Coffee' brand identity, which features his distinctive
+            hand-drawn style and has been in use for over ten years.<br><br>ブライアンはVoila Coffeeから依頼を受け、いくつかの製品デザインを手がけました。その結果、彼の独自の手描きスタイルを活かしたブランドアイデンティティ「We Do Coffee」が誕生し、10年以上にわたり使用されています。</p>
+        </div>
+
+        <div class="works-item">
+          <img src="/src/assets/images/works-3.png" alt="works-3" class="works-image">
+          <h2 class="works-title">Biz Markie</h2>
+          <br><br>
+          <p class="text-center">As a pioneer in the early 2000s designer toy movement in America, Brian
+            independently designed and produced the Official BIZ MARKIE doll, a pop-culture icon, in
+            collaboration with the late-great Biz Markie.<br><br>2000年代初頭のアメリカにおけるデザイナーズトイ・ムーブメントの先駆者として、ブライアンは唯一無二の存在として、ポップカルチャーのアイコンとなったオフィシャルBIZ MARKIEドールを、故・偉大なBizMarkieとのコラボレーションでデザイン・制作しました。</p>
+        </div>
+      </div>
+
+      <div class="clients-container">
+        <img src="/src/assets/images/Clients.png" alt="Clients" class="clients-image">
+        <p class="clients-text">World Class Clientele</p>
+        <br><br>
+        <p class="text-center">Brian’s work spans kids’ toy design, edutainment, fashion, motion graphics, and
+          entertainment, delivering creative solutions to companies of all sizes across multiple continents.<br><br>ブライアンの活動は、子供向け玩具デザイン、エデュテインメント、ファッション、モーショングラフィックス、エンターテインメントなど多岐にわたり、世界中のさまざまな規模の企業にクリエイティブなソリューションを提供しています。<br><br><a
+            href="https://www.tumblr.com/blog/mrbdrandomworks" target="_blank">randomworks by
+            mrbriandesign</a></p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

@@ -2,49 +2,303 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>Educational Design - Mr.Brian Design</title>
+  <meta name="description" content="Educational Design Materials and ESL Teaching by Mr.Brian Design">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="Educational Design - Mr.Brian Design">
+  <meta property="og:description" content="Explore educational design materials and ESL media by Mr.Brian Design.">
+  <meta property="og:image" content="/src/assets/images/cards/educational-card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/educational_media">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Educational Design - Mr.Brian Design">
+  <meta name="twitter:description" content="Explore educational design materials and ESL media by Mr.Brian Design.">
+  <meta name="twitter:image" content="/src/assets/images/cards/educational-card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="Educational Design, ESL, Teaching Materials, MUKIMU Workshop, Japan, Professional Works">
+  <meta name="author" content="Mr.Brian Design">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="src/js/index.js"></script>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for educational design page */
+    .educational-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* Two columns */
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .educational-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .educational-image {
+      width: 100%;
+      /* Make images scale to the container width */
+      max-width: 450px;
+      /* Set a maximum width to match the text width */
+      border-radius: 8px;
+      margin-bottom: 10px;
+      /* Reduced margin */
+      transition: transform 0.3s ease;
+    }
+
+    .educational-image:hover {
+      transform: scale(1.15);
+    }
+
+    .educational-text {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      /* Center the content horizontally */
+    }
+
+    .english-text,
+    .japanese-text {
+      flex: 1;
+    }
+
+    .english-text p,
+    .japanese-text p {
+      text-indent: 20px;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .english-text p:hover,
+    .japanese-text p:hover {
+      color: yellowgreen;
+    }
+
+    /* Add this new style rule */
+    .educational-grid p {
+      transition: color 0.3s ease;
+    }
+
+    .educational-grid p:hover {
+      color: yellowgreen;
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      .educational-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+      }
+
+      .educational-text {
+        flex-direction: column;
+      }
+
+      .educational-image {
+        max-width: 100%;
+        /* Increased max-width for mobile */
+        margin: 0 auto;
+      }
+    }
+
+    .educational-title-location {
+      font-size: 0.9em;
+      /* 10% smaller */
+      font-weight: normal;
+    }
+
+    .educational-link {
+      color: yellowgreen;
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    .educational-link:hover {
+      color: white;
+    }
+
+    /* Footer Styles (applied to all screen sizes) */
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-icons img {
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Style for the video container */
+    .video-container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .video-container img {
+      max-width: 90%;
+      display: block;
+      height: auto;
+      border-radius: 10px;
+      /* Added border-radius */
+    }
+
+    /* Style for the caption */
+    .youtube-caption {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .youtube-caption a {
+      color: yellowgreen;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      /* Remove underline */
+    }
+
+    .youtube-caption a:hover {
+      color: white;
+    }
+
+    /* Responsive adjustments for video */
+    @media (max-width: 768px) {
+      .video-container {
+        width: 100%;
+      }
+
+      .video-container img {
+        max-width: 80%;
+      }
+    }
+
+    /* Style for bottom description */
+    .educational-bottom-description {
+      padding-top: 40px;
+      max-width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+    }
+
+    .educational-bottom-description:hover {
+      color: yellowgreen;
+    }
+
+    /* Style for MUKIMU Workshop link */
+    .mukimu-link {
+      color: yellowgreen;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .mukimu-link:hover {
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">educational design</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">educational design</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">educational design</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 90px;">
+      <!-- Increased top padding -->
+      <h1 class="text-center" style="margin-bottom: 40px;">Educational Design</h1>
+
+      <div class="educational-grid">
+        <div class="educational-item">
+          <img src="/src/assets/images/school-00.png" alt="school-00" class="educational-image">
+          <h2 class="text-center">Design + Publishing</h2>
+          <br>
+          <p class="text-center"></p>
+          <div class="educational-text"></div>
         </div>
-      </footer>
+
+        <div class="educational-item">
+          <img src="/src/assets/images/school-01.png" alt="school-01" class="educational-image">
+          <h2 class="text-center">Designed by Teachers</h2>
+          <br>
+          <p class="text-center"></p>
+          <div class="educational-text"></div>
+        </div>
+
+        <div class="educational-item">
+          <img src="/src/assets/images/school-02.png" alt="school-02" class="educational-image">
+          <h2 class="text-center">Research + Curriculum Design</h2>
+          <br>
+          <p class="text-center"></p>
+          <div class="educational-text"></div>
+        </div>
+
+        <div class="educational-item">
+          <img src="/src/assets/images/school-03.png" alt="school-03" class="educational-image">
+          <h2 class="text-center">Application Based Learning</h2>
+          <br>
+          <p class="text-center"></p>
+          <div class="educational-text"></div>
+        </div>
+      </div>
+
+      <!-- New Paragraphs -->
+      <p class="educational-bottom-description">For nearly twenty years, Mr.Brian Design has created a range of educational
+        materials, including self-published workbooks, puzzles, card games, classroom posters, and both digital and
+        physical flashcards. In 2012, he established <a href="https://mukimu.xyz" class="mukimu-link">ムキムワークショップ</a>, an
+        ESL school and information center in Japan where he teaches English, arts and crafts, and life skills to
+        Japanese children. This endeavor not only fulfills Mr. Brian's commitment to social responsibility but also
+        serves as a direct research and active learning platform, fueling the R&D process to develop enhanced products
+        and experiences.<br><br>ミスター・ブライアン・デザインは、約20年にわたり、自費出版のワークブック、パズル、カードゲーム、教室用ポスター、デジタルおよび物理的なフラッシュカードなど、幅広い教育教材を制作してきました。2012年には、日本の子供たちに英語、アート、クラフト、ライフスキルを教える英会話スクール兼情報センターである<a href="https://mukimu.xyz"
+          class="mukimu-link">MUKIMU Workshop</a>を日本で開設しました。この活動は、Mr. Brianの社会的責任を果たすだけでなく、「直接的な研究」と「アクティブラーニング」のアプローチを通じて、より優れた製品と体験を開発するためのR&Dプロセスを促進するプラットフォームとしても機能しています。</p>
+
+      <!-- YouTube Video Embed -->
+      <div class="video-container">
+        <img src="/src/assets/images/YouTube.png" alt="YouTube">
+      </div>
+      <p class="youtube-caption">Check out <a href="https://www.youtube.com/@mukimuworkshop9820/videos">MUKIMU Workshop on
+          YouTube</a></p>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

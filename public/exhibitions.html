@@ -2,49 +2,211 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/index.js"></script>
-    <title>Page Title - Mr.Brian Design</title>
-    <link rel="stylesheet" href="src/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- General Metadata (Recommended) -->
+  <title>Exhibitions - Mr.Brian Design</title>
+  <meta name="description" content="Exhibitions by Mr.Brian Design.">
+
+  <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+  <meta property="og:title" content="Exhibitions - Mr.Brian Design">
+  <meta property="og:description" content="Exhibitions by Mr.Brian Design.">
+  <meta property="og:image" content="/src/assets/images/cards/exhibitions-card.png">
+  <meta property="og:url" content="https://www.mrbriandesign.com/exhibitions">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mr.Brian Design">
+
+  <!-- Twitter Card (Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exhibitions - Mr.Brian Design">
+  <meta name="twitter:description" content="Exhibitions by Mr.Brian Design.">
+  <meta property="twitter:image" content="/src/assets/images/cards/exhibitions-card.png">
+  <meta name="twitter:site" content="@mrbriandesign">
+  <meta name="twitter:creator" content="@mrbriandesign">
+
+  <!-- Other Meta Tags (Optional) -->
+  <meta name="keywords" content="Exhibitions, Art, Mr.Brian Design, Kagoshima, Kyoto, Art of Luck, Mixed Media, Art Exhibitions">
+  <meta name="author" content="Mr.Brian Design">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="src/js/index.js"></script>
+  <title>exhibitions - Mr.Brian Design</title>
+  <link rel="stylesheet" href="src/css/index.css">
+  <style>
+    /* Custom styles for exhibitions page */
+    .exhibition-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .exhibition-image {
+      width: 75%;
+      /* Reduced from 100% by 25% */
+      max-width: 675px;
+      /* Reduced from 900px by 25% */
+      border-radius: 8px;
+      align-self: center;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .exhibition-image:hover {
+      transform: scale(1.15);
+    }
+
+    .exhibition-text {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      /* Center the content horizontally */
+    }
+
+    .english-text,
+    .japanese-text {
+      flex: 1;
+    }
+
+    .english-text p,
+    .japanese-text p {
+      text-indent: 20px;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .english-text p:hover,
+    .japanese-text p:hover {
+      color: yellowgreen;
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      .exhibition-text {
+        flex-direction: column;
+      }
+
+      .exhibition-image {
+        width: 75%;
+        /* Reduced from 100% by 25% */
+        max-width: 75%;
+        margin: 0 auto;
+      }
+    }
+
+    .exhibition-title-location {
+      font-size: 0.9em;
+      /* 10% smaller */
+      font-weight: normal;
+    }
+
+    .exhibition-link {
+      color: yellowgreen;
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    .exhibition-link:hover {
+      color: white;
+    }
+
+    /* Footer Styles (applied to all screen sizes) */
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-icons img {
+      width: 48px;
+      height: 48px;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
-            <div class="llbxdll-current-page text-xl font-bold">exhibitions</div>
-        </div>
-    </nav>
-
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-        <main class="container desktop-p" style="padding-top: 90px;">
-            <h1 class="text-center" style="margin-bottom: 50px;">exhibitions</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </main>
+  <!-- Navbar -->
+  <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+      <div class="llbxdll-current-page text-xl font-bold">exhibitions</div>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="llbxdll-footer">
-        <div class="container">
-          <div class="footer-content">
-            <img src="/footer.png" alt="Mr.Brian Design Footer Logo">
-            <div class="social-icons">
-              <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/x-icon.png" alt="X/Twitter" width="48" height="48">
-              </a>
-              <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/discord-icon.png" alt="Discord" width="48" height="48">
-              </a>
-            </div>
-          </div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+    <main class="container desktop-p" style="padding-top: 90px;">
+      <!-- Increased top padding -->
+      <h1 class="text-center" style="margin-bottom: 40px;">Exhibitions</h1>
+
+      <div class="exhibition-container">
+        <!-- Exhibition 1: Art of Luck -->
+        <img src="/src/assets/images/art-of-luck.jpg" alt="Art of Luck" class="exhibition-image">
+        <h2 class="text-center">The Art of Luck <br><br><span class="exhibition-title-location">at
+            LuckApartment,KagoshimaCity, Japan November 4-11, 2024</span> <br><br></h2>
+        <div class="exhibition-text">
+          <a href="https://www.tumblr.com/blog/theartofluck" class="exhibition-link">see the art from this
+            exhibition</a>
         </div>
-      </footer>
+        <br><br>
+
+        <!-- Exhibition 2: All Shapes & Sizes -->
+        <img src="/src/assets/images/hohohoza.png" alt="Hohohoza" class="exhibition-image">
+        <h2 class="text-center">All Shapes & Sizes <br><br><span class="exhibition-title-location">atホホホ座Hohohoza,Kyoto,Japan
+            August 10-30, 2021</span> <br><br></h2>
+        <div class="exhibition-text">
+          <a href="https://www.tumblr.com/mrbriandesignallshapesandsizes" class="exhibition-link">see the art
+            from this exhibition</a>
+        </div>
+        <br><br>
+
+        <!-- Exhibition 3: Mixed Media Postcards -->
+        <img src="/src/assets/images/sunny-days.png" alt="Sunny Days" class="exhibition-image">
+        <h2 class="text-center">Mixed Media Postcards <br><br><span class="exhibition-title-location">atSunnyDaysCoffe,Kagoshima,
+            Japan February 11- March-4 2021</span> <br><br></h2>
+        <div class="exhibition-text">
+          <a href="https://www.tumblr.com/blog/mrbdmixedmediapostcards" class="exhibition-link">see the art
+            from this exhibition</a>
+        </div>
+        <br><br>
+
+        <!-- Exhibition 4: Mixed Media Works -->
+        <img src="/src/assets/images/good-neighbors.jpg" alt="Good Neighbors" class="exhibition-image">
+        <h2 class="text-center">Mixed Media Works <br><br><span class="exhibition-title-location">atGoodNeighborsGallery,Kagoshima,
+            Japan January 9-24, 2021</span> <br><br></h2>
+        <div class="exhibition-text">
+          <a href="https://www.tumblr.com/blog/mrbd-at-good-neighbors-gallery" class="exhibition-link">see
+            the art from this exhibition</a>
+        </div>
+        <br><br>
+
+        <!-- Exhibition 5: In Mixed Company -->
+        <img src="/src/assets/images/mixed-company.png" alt="Mixed Company" class="exhibition-image">
+        <h2 class="text-center">In Mixed Company <br><br><span class="exhibition-title-location">atCoffeeSoldier,Kagoshima,Japan
+            July 16-24, 2016</span> <br><br></h2>
+        <div class="exhibition-text">
+          <a href="https://www.tumblr.com/blog/mrbd-at-good-neighbors-gallery" class="exhibition-link">see
+            the art from this exhibition</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>

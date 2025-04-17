@@ -1,7 +1,6 @@
 /* Part 1 */
 
 /* Global Resets */
-
 *,
 *:before,
 *:after {
@@ -23,18 +22,20 @@ body {
   font-size: var(--fs-300);
   line-height: var(--lh-400);
   color: var(--clr-white);
-  background-color: #000066 !important;
+  background-color: #231042 !important;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 
 html {
-  margin: 0; /* Ensure no margin on html */
+  margin: 0;
+  /* Ensure no margin on html */
 }
 
 main {
-  padding-top: 90px; /* Adjusted to add 30px space between the grid and navbar */
+  padding-top: 90px;
+  /* Adjusted to add 30px space between the grid and navbar */
 }
 
 img {
@@ -54,11 +55,9 @@ a {
   --sp-300: 1.5rem;
   --sp-400: 2rem;
   --sp-500: 2.5rem;
-
   --desktop-gutter: 2rem;
   --tablet-gutter: 1rem;
   --mobile-gutter: 1.5rem;
-
   --clr-white: hsl(0, 0%, 100%);
   --clr-black: hsl(0, 0%, 7%);
   --clr-purple-100: hsl(254, 88%, 90%);
@@ -66,25 +65,20 @@ a {
   --clr-yellow-50: hsl(31, 66%, 98%);
   --clr-yellow-100: hsl(31, 66%, 93%);
   --clr-yellow-500: hsl(39, 100%, 71%);
-
   --ff: 'DM Sans', sans-serif;
   --fw-400: 400;
   --fw-500: 500;
-
   --fs-100: clamp(2.75rem, 4vw + 1rem, 4rem);
   --fs-150: clamp(2rem, 1.5vw + 1rem, 3rem);
   --fs-200: clamp(1.5rem, 1.25vw + 1rem, 2.25rem);
   --fs-300: clamp(1.125rem, 0.75vw + 0.5rem, 1.75rem);
-
   --lh-100: 93.5%;
   --lh-200: 90%;
   --lh-300: 87.5%;
   --lh-400: 111%;
-
   --ls-100: -3px;
   --ls-200: -2px;
   --ls-400: 0px;
-
   --radius-sm: 0.625rem;
 }
 
@@ -184,11 +178,13 @@ a {
 
 /* Grid Items Effect */
 #page-wrapper .grid > div {
-  transition: background-color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease;
+  /* Smooth transition */
 }
 
 #page-wrapper .grid > div:hover {
-  background-color: #ff3399; /* Change background color to pink */
+  background-color: #ff3399;
+  /* Change background color to pink */
 }
 
 /* Spacing */
@@ -236,25 +232,24 @@ a {
 
 /* Background Colors */
 .bg-white {
-  background-color: blue;
+  background-color: #2c53d5;
 }
 
 .bg-purple-100 {
-  background-color: blue;
+  background-color: #1aa222;
 }
 
 .bg-purple-500 {
-  background-color: blue;
+  background-color: #2c53d5;
 }
 
 .bg-yellow-100 {
-  background-color: blue;
+  background-color: #2c53d5;
 }
 
 .bg-yellow-500 {
-  background-color: blue;
+  background-color: #1aa222;
 }
-
 /* Borders */
 .radius-sm {
   border-radius: var(--radius-sm);
@@ -271,6 +266,7 @@ a {
 }
 
 /* Media Queries */
+
 /* Tablet View */
 @media (min-width: 48rem) {
   .grid-columns {
@@ -421,6 +417,7 @@ a {
 }
 
 /* Animations */
+
 /* Keyframe for fade-in effect */
 @keyframes fadeIn {
   0% {
@@ -445,7 +442,8 @@ body {
 
 /* Make the page wrapper grow to fill available space */
 #page-wrapper {
-  flex: 1; /* Allow the page wrapper to grow and push the footer down */
+  flex: 1;
+  /* Allow the page wrapper to grow and push the footer down */
   display: flex;
   flex-direction: column;
 }
@@ -454,49 +452,52 @@ body {
 .llbxdll-footer {
   background-color: black;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 150px; /* Set a fixed height for the footer */
-  padding: 0;
-  margin-top: auto;
-  position: relative; /* For absolute positioning of social icons */
+  min-height: 150px;
+  padding: 1rem 0;
+  box-sizing: border-box;
 }
 
 .llbxdll-footer .container {
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Vertically align items */
-  width: 100%; /* Take full width of the footer */
-  padding: 0 1rem; /* Add some padding on the sides */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .llbxdll-footer .footer-content {
-  display: flex; /* Arrange image and icons in a row */
-  align-items: center; /* Vertically align items */
-  gap: 2rem; /* Add spacing between image and icons */
+  display: flex;
+  flex-direction: row; /* Ensure row direction */
+  align-items: center;  /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  gap: 2rem;
+  box-sizing: border-box;
 }
 
 .llbxdll-footer img {
-  height: 50px; /* Set the image height */
-  width: auto; /* Maintain aspect ratio */
+  height: 50px;
+  width: auto;
   display: block;
-  transition: transform 0.3s ease; /* Add a smooth transition */
+  transition: transform 0.3s ease;
 }
 
 .llbxdll-footer img:hover {
-  transform: scale(1.2); /* Scale up to 110% on hover */
+  transform: scale(1.2);
 }
 
 .social-icons {
-  display: flex; /* Display icons in a row */
-  gap: 0.5rem; /* Add spacing between icons */
-  align-items: center; /* Vertically align icons */
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .social-icons a img {
-  width: 48px; /* Adjust icon size */ /* 24px * 2 = 48px */
-  height: 48px; /* Adjust icon size */ /* 24px * 2 = 48px */
+  width: 48px;
+  height: 48px;
   display: block;
   transition: transform 0.2s ease-in-out;
 }
@@ -505,11 +506,49 @@ body {
   transform: scale(1.1);
 }
 
+/* Remove previous top/bottom shifting */
+.llbxdll-footer img[alt="Mr.Brian Design Footer Logo"] {
+  position: static;
+  top: auto;
+}
+
+.llbxdll-footer .social-icons {
+  position: static;
+  top: auto;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  .llbxdll-footer .footer-content {
+    flex-direction: column;         /* Stack logo and icons vertically */
+    gap: 1rem;                      /* Reduce gap for mobile */
+    align-items: center;            /* Center items horizontally */
+    justify-content: center;        /* Center items vertically */
+  }
+
+  .llbxdll-footer img {
+    height: 40px;                   /* Slightly smaller logo on mobile */
+  }
+
+  .social-icons {
+    gap: 0.25rem;                   /* Reduce gap between icons */
+  }
+
+  .social-icons a img {
+    width: 36px;                    /* Smaller icons for mobile */
+    height: 36px;
+  }
+}
+
+
 /* Remove any gradient or extra space above the footer */
 body {
-  margin: 0; /* Ensure no margin on the body */
-  padding: 0; /* Ensure no padding on the body */
-  background: none; /* Remove any background gradient */
+  margin: 0;
+  /* Ensure no margin on the body */
+  padding: 0;
+  /* Ensure no padding on the body */
+  background: none;
+  /* Remove any background gradient */
 }
 
 /* Base class for sections - visible by default */
@@ -562,7 +601,7 @@ body {
 
 /* section7 */
 .section7 {
-  background-color: blue;
+  background-color: #1aa222;
   border-radius: 10px;
   color: white;
   display: flex;
@@ -646,11 +685,13 @@ main.grid {
   height: auto;
   display: block;
   margin: 0 auto;
-  transition: transform 0.3s ease; /* Add a smooth transition */
+  transition: transform 0.3s ease;
+  /* Add a smooth transition */
 }
 
 .section1 img:hover {
-  transform: scale(1.1); /* Scale up to 110% on hover */
+  transform: scale(1.1);
+  /* Scale up to 110% on hover */
 }
 
 /* Add cursor pointer and hover effect to sections */
@@ -675,14 +716,18 @@ main.grid {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #FFC300; /* Background color */
-  padding: 1rem 0; /* Adjust vertical spacing */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: black;
+  /* Background color */
+  padding: 1rem 0;
+  /* Adjust vertical spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
 }
 
 .llbxdll-navbar .container {
   display: flex;
-  justify-content: space-between; /* Space between left and right elements */
+  justify-content: space-between;
+  /* Space between left and right elements */
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -690,17 +735,21 @@ main.grid {
 }
 
 .llbxdll-navbar-brand {
-  font-size: 1.65rem; /* Increase font size by 10% (original was 1.5rem) */
+  font-size: 1.65rem;
+  /* Increase font size by 10% (original was 1.5rem) */
   font-weight: bold;
   text-decoration: none;
-  color: #333; /* Text color for the website title */
-  letter-spacing: -0.05em; /* Adjust kerning to -50 (em equivalent) */
+  color: white;
+  /* Text color for the website title */
+  letter-spacing: -0.05em;
+  /* Adjust kerning to -50 (em equivalent) */
 }
 
 .llbxdll-current-page {
   font-size: 1.25rem;
   font-weight: 500;
-  color: white; /* Text color for the current page title */
+  color: white;
+  /* Text color for the current page title */
 }
 
 /* Mobile Responsiveness */
@@ -727,21 +776,26 @@ main.grid {
 /* Mobile Menu Styles (Initially Hidden) */
 #llbxdll-nav-links {
   position: absolute;
-  top: 100%; /* Position below the navbar */
+  top: 100%;
+  /* Position below the navbar */
   left: 0;
   width: 100%;
-  background-color: #f3f4f6; /* Match navbar background */
+  background-color: #f3f4f6;
+  /* Match navbar background */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  z-index: 999; /* Ensure it's above other content */
+  z-index: 999;
+  /* Ensure it's above other content */
 }
 
 #llbxdll-nav-links ul {
-  flex-direction: column; /* Stack links vertically on mobile */
+  flex-direction: column;
+  /* Stack links vertically on mobile */
 }
 
 #llbxdll-nav-links li {
-  margin: 0.5rem 0; /* Add spacing between links */
+  margin: 0.5rem 0;
+  /* Add spacing between links */
 }
 
 .contact-card input,
@@ -751,30 +805,37 @@ main.grid {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #333333; /* Dark gray fields */
-  color: white; /* White text in fields */
-  caret-color: white; /* White caret (cursor) */
+  background-color: #333333;
+  /* Dark gray fields */
+  color: white;
+  /* White text in fields */
+  caret-color: white;
+  /* White caret (cursor) */
 }
 
 .contact-card textarea {
-  resize: none; /* Prevent resizing */
+  resize: none;
+  /* Prevent resizing */
 }
 
 /* Ensure the contact card is not cropped by the navbar */
 @media (max-width: 768px) {
   #page-wrapper {
-    padding-top: 100px; /* Add padding to account for the fixed navbar height */
+    padding-top: 100px;
+    /* Add padding to account for the fixed navbar height */
   }
 
   .contact-card {
-    margin-top: 1rem; /* Add some spacing below the navbar */
+    margin-top: 1rem;
+    /* Add some spacing below the navbar */
   }
 }
 
 /* Text Scaling Hover Effects */
 
 /* Section 1 */
-.section1 p { /* Targets the "I'm Keepin' it Creative" text */
+.section1 p {
+  /* Targets the "I'm Keepin' it Creative" text */
   transition: transform 0.3s ease;
 }
 
@@ -783,7 +844,8 @@ main.grid {
 }
 
 /* Section 2 */
-.section2 h2 { /* Targets the "little world" heading */
+.section2 h2 {
+  /* Targets the "little world" heading */
   transition: transform 0.3s ease;
 }
 
@@ -792,7 +854,8 @@ main.grid {
 }
 
 /* Section 3 */
-.section3 h2 { /* Targets the "pixel world" heading */
+.section3 h2 {
+  /* Targets the "pixel world" heading */
   transition: transform 0.3s ease;
 }
 
@@ -801,25 +864,32 @@ main.grid {
 }
 
 /* Section 4 */
-.section4 h2, .section4 p { /* Targets both the heading and the paragraph */
+.section4 h2,
+.section4 p {
+  /* Targets both the heading and the paragraph */
   transition: transform 0.3s ease;
 }
 
-.section4 h2:hover, .section4 p:hover {
+.section4 h2:hover,
+.section4 p:hover {
   transform: scale(1.1);
 }
 
 /* Section 5 */
-.section5 span, .section5 h2 { /* Targets both the span and the heading */
+.section5 span,
+.section5 h2 {
+  /* Targets both the span and the heading */
   transition: transform 0.3s ease;
 }
 
-.section5 span:hover, .section5 h2:hover {
+.section5 span:hover,
+.section5 h2:hover {
   transform: scale(1.1);
 }
 
 /* Section 6 */
-.section6 h2 { /* Targets the "works" heading */
+.section6 h2 {
+  /* Targets the "works" heading */
   transition: transform 0.3s ease;
 }
 
@@ -828,7 +898,8 @@ main.grid {
 }
 
 /* Section 7 */
-.section7 h2 { /* Targets the "about" heading */
+.section7 h2 {
+  /* Targets the "about" heading */
   transition: transform 0.3s ease;
 }
 
@@ -837,7 +908,8 @@ main.grid {
 }
 
 /* Section 8 */
-.section8 h2 { /* Targets the "3D" heading */
+.section8 h2 {
+  /* Targets the "3D" heading */
   transition: transform 0.3s ease;
 }
 
@@ -846,7 +918,8 @@ main.grid {
 }
 
 /* Section 9 */
-.section9 h2 { /* Targets the "exhibitions" heading */
+.section9 h2 {
+  /* Targets the "exhibitions" heading */
   transition: transform 0.3s ease;
 }
 
@@ -855,7 +928,8 @@ main.grid {
 }
 
 /* Section 10 */
-.section10 h2 { /* Targets the "web3" heading */
+.section10 h2 {
+  /* Targets the "web3" heading */
   transition: transform 0.3s ease;
 }
 
@@ -864,7 +938,8 @@ main.grid {
 }
 
 /* Section 11 */
-.section11 h2 { /* Targets the "contact" heading */
+.section11 h2 {
+  /* Targets the "contact" heading */
   transition: transform 0.3s ease;
 }
 
@@ -874,16 +949,321 @@ main.grid {
 
 .english-text p,
 .japanese-text p {
-  text-indent: 20px; /* Add indentation to the first line of each paragraph */
-  margin-bottom: 10px; /* Add a line break after each paragraph */
-
-  .about-image {
-    transition: transform 0.3s ease; /* Add a smooth transition */
-  }
-  
-  .about-image:hover {
-    transform: scale(1.15); /* Scale up to 115% on hover */
-  }
-  
+  text-indent: 20px;
+  /* Add indentation to the first line of each paragraph */
+  margin-bottom: 10px;
+  /* Add a line break after each paragraph */
 }
+
+.about-image {
+  transition: transform 0.3s ease;
+  /* Add a smooth transition */
+}
+
+.about-image:hover {
+  transform: scale(1.15);
+  /* Scale up to 115% on hover */
+}
+
+/* Custom styles for about page */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.about-image {
+  width: 300px;
+  border-radius: 8px;
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.exhibition-image {
+  max-width: 24%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.exhibition-title-location {
+  font-style: italic;
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: left;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.about-text:hover {
+  color: yellowgreen;
+}
+
+.english-text,
+.japanese-text {
+  flex: 1;
+  text-align: left;
+}
+
+.english-text p,
+.japanese-text p {
+  text-indent: 20px;
+  margin-bottom: 10px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.english-text p:hover,
+.japanese-text p:hover {
+  color: yellowgreen;
+}
+
+.english-text a,
+.japanese-text a {
+  color: yellowgreen;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.english-text a:hover,
+.japanese-text a:hover {
+  color: white;
+}
+
+.group-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  padding-top: 40px;
+}
+
+.hover-container {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-container .hover-image {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transform-origin: center;
+}
+
+.hover-container .hover-image {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* Style for centering the image in Japanese text */
+.japanese-text .hover-container {
+  display: block;
+  text-align: center;
+}
+
+.japanese-text .hover-container .hover-image {
+  left: 50%;
+  border-radius: 10px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (min-width: 769px) {
+  .about-text {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image {
+    width: 100%;
+  }
+
+  .about-text {
+    gap: 20px;
+  }
+
+  h1.text-center {
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  h2.text-center {
+    line-height: 1.2;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .social-icons img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  /* Custom styles for works page */
+ .works-container {
+     display: flex;
+     /* Use flexbox for horizontal layout */
+     justify-content: space-around;
+     /* Distribute items evenly */
+     align-items: center;
+     /* Align items vertically */
+     padding: 20px;
+ }
+
+ .works-item {
+     display: flex;
+     flex-direction: column;
+     /* Stack image and title vertically */
+     align-items: center;
+     /* Center content within each item */
+ }
+
+ .works-image {
+     width: 88%;
+     /* Increased from 20% by 300% */
+     max-width: 660px;
+     /* Increased from 200px by 300% */
+     height: auto;
+     border-radius: 8px;
+     transition: transform 0.3s ease;
+ }
+
+ .works-image:hover {
+     transform: scale(1.1);
+ }
+
+ .works-title {
+     text-align: center;
+     margin-top: 30px;
+     /* Increased margin-top by 20px */
+ }
+
+ /* Add this new style rule */
+ .works-item p {
+     transition: color 0.3s ease;
+     max-width: 640px;
+     /* Ensure paragraph width matches image width minus 20px on each side */
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     /* Center the text */
+     padding-left: 10px;
+     /* Add 10px padding to left */
+     padding-right: 10px;
+     /* Add 10px padding to right */
+ }
+
+ .works-item p:hover {
+     color: yellowgreen;
+ }
+
+ /* Styles for Clients.png */
+ .clients-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 40px;
+     /* Move down by 40px (increased from 30px) */
+ }
+
+ .clients-image {
+     width: 42.5%;
+     display: block;
+     margin: 0 auto;
+     /* Center the image */
+ }
+
+ .clients-text {
+     text-align: center;
+     margin-top: 10px;
+ }
+
+ /* Add new style rule for clients description */
+ .clients-container p {
+     transition: color 0.3s ease;
+     max-width: 40.5%;
+     /* Adjusted for 20px narrower */
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     /* Center the text */
+     padding-left: 10px;
+     /* Add 10px padding to left */
+     padding-right: 10px;
+     /* Add 10px padding to right */
+ }
+
+ .clients-container p:hover {
+     color: yellowgreen;
+ }
+
+ /* Option 1: Targetting works-0.png */
+ .works-image[alt="works-0"] {
+     width: 88%;
+     /* Ensure it matches the width of other images */
+     max-width: 660px;
+     /* Ensure it matches the max-width of other images */
+     height: auto;
+     /* Maintain aspect ratio */
+ }
+
+ /* Option 2: Targetting works-0.png using a unique class */
+ .stussy-item .works-image {
+     width: 88%;
+     /* Ensure it matches the width of other images */
+     max-width: 660px;
+     /* Ensure it matches the max-width of other images */
+     height: auto;
+     /* Maintain aspect ratio */
+ }
+ /* Carousel Container */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for LITTLE WORLD */
+.little-world-bottom-description strong {
+  transition: color 0.3s ease;
+}
+
+.little-world-bottom-description strong:hover {
+  color: yellowgreen;
+}
+
+}
+
 
