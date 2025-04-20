@@ -2,48 +2,221 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Contact Form</title>
-    <meta name="description" content="This is my personal contact page created using static HTML, CSS, Javascript. Used github to host this website." />
-    <meta name="author" content="Manthan Ankolekar" />
-    <meta name="keywords" content="contact, personal website, portfolio, web development, HTML, CSS, JavaScript">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta property="og:title" content="Contact Form" />
-    <meta property="og:description" content="This is my personal contact page created using static HTML, CSS, Javascript." />
-    <meta property="og:image" content="assets/og-image.webp" />
-    <meta property="og:url" content="https://manthanank.github.io/contact/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@manthan_ank" />
-    <meta name="twitter:title" content="Contact Form" />
-    <meta name="twitter:description" content="This is my personal contact page created using static HTML, CSS, Javascript." />
-    <meta name="twitter:image" content="assets/twitter-card-image.webp" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-dark.webp" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-light.webp" media="(prefers-color-scheme: light)" />
-    <link rel="canonical" href="https://manthanank.github.io/contact/">
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- General Metadata (Recommended) -->
+    <title>Contact - Mr.Brian Design</title>
+    <meta name="description" content="Contact Mr.Brian Design to discuss your project or collaboration.">
+    <!-- Open Graph (OG) Protocol (Facebook, LinkedIn, Pinterest, etc.) -->
+    <meta property="og:title" content="Contact - Mr.Brian Design">
+    <meta property="og:description" content="Contact Mr.Brian Design">
+    <meta property="og:image" content="/contact-card.png">
+    <meta property="og:url" content="https://www.mrbriandesign.com/contact">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mr.Brian Design">
+    <!-- Twitter Card (Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact - Mr.Brian Design">
+    <meta name="twitter:description" content="Contact Mr.Brian Design">
+    <meta property="twitter:image" content="/contact-card.png">
+    <meta name="twitter:site" content="@mrbriandesign">
+    <meta name="twitter:creator" content="@mrbriandesign">
+    <!-- Other Meta Tags (Optional) -->
+    <meta name="keywords" content="Contact, Mr.Brian Design, Email, Collaboration, Project">
+    <meta name="author" content="Mr.Brian Design">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <title>Contact - Mr.Brian Design</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles (From your style.css + Overrides) */
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            background-color: #121212;
+            color: white;
+            /* Prevent scrolling */
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Center the Contact Card */
+        #page-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 110px;
+        }
+
+        /* Contact Card Styling */
+        .contact-card {
+            background-color: black;
+            border-radius: 30px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 80px;
+            /* Pushing it up */
+            transform: translateY(-110px);
+        }
+
+        .contact-card h1 {
+            margin-bottom: 20px;
+        }
+
+        .contact-card label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .contact-card input,
+        .contact-card textarea {
+            width: calc(100% - 40px);
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #333333;
+            color: white;
+        }
+
+        .contact-card textarea {
+            resize: none;
+        }
+
+        .contact-card button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-card button:hover {
+            background-color: #f1f1f1;
+        }
+
+        #form-status {
+            margin-top: 20px;
+        }
+
+        /* Footer Styles - IMPORTANT */
+        .llbxdll-footer {
+            text-align: center;
+            padding-bottom: 20px;
+            /* Remove fixed positioning */
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-icons img {
+            width: 48px;
+            height: 48px;
+        }
+
+        /* REMOVE NAVBAR elements */
+        .llbxdll-navbar {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Contact Form</h1>
-    </header>
-    
-    <div id="responseMessage"></div> <!-- Display API response message -->
-
-    <form id="contactForm">
-        <input name="name" type="text" id="name" class="feedback-input" placeholder="Name" required />
-        <input name="email" type="email" id="email" class="feedback-input" placeholder="Email" required />
-        <textarea name="message" id="message" class="feedback-input" placeholder="Comment" required></textarea>
-        <input type="submit" value="SUBMIT" id="submitButton" />
-    </form>
-
-
-    <!-- Additional details or footer -->
-    <footer>
-        <p>&copy; 2024 Manthan Ankolekar | Contact Form.</p>
+    <!-- Navbar -->
+    <!-- REMOVE NAVBAR elements -->
+    <nav class="llbxdll-navbar bg-gray-100 py-4 shadow-md">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="/" class="llbxdll-navbar-brand text-xl font-bold">Mr.Brian Design</a>
+            <div class="llbxdll-current-page text-xl font-bold">contact</div>
+        </div>
+    </nav>
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+        <!-- Contact Form Card -->
+        <div class="contact-card">
+            <img src="assets/LOGO.png" alt="Logo" style="max-width: 200px; margin-bottom: 10px;">
+            <h1>What's Up?</h1>
+            <form id="contactForm">
+                <label for="name">name</label>
+                <input type="text" id="name" name="name" placeholder="" required>
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="" required>
+                <label for="message">message</label>
+                <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="form-status"></p><!-- Status message placeholder -->
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="llbxdll-footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="assets/footer.png" alt="Mr.Brian Design Footer Logo" style="width: 15%;">
+                <div class="social-icons">
+                    <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer"><img
+                            src="assets/x-icon.png" alt="X/Twitter" width="48" height="48"></a>
+                    <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer"><img
+                            src="assets/discord-icon.png" alt="Discord" width="48" height="48"></a>
+                </div>
+            </div>
+        </div>
     </footer>
+    <!-- EmailJS Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        emailjs.init("6U7D2I9QkVCCNf_9k"); // Replace "YOUR_PUBLIC_KEY" with your actual Public Key
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contactForm");
+            const status = document.getElementById("form-status");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+                // Send the form data via EmailJS
+                emailjs.sendForm(
+                    "service_xk3nfr8", // Replace with your Service ID
+                    "template_stl5b6g", // Replace with your Template ID
+                    this // Pass the form element directly
+                ).then(() => {
+                    status.textContent = "Message sent successfully!";
+                    status.style.color = "green";
+                    form.reset(); // Reset the form fields
+                }).catch((error) => {
+                    console.error("Failed to send message:", error);
+                    status.textContent = "Failed to send message. Please try again.";
+                    status.style.color = "red";
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
