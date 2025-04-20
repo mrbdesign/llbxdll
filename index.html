@@ -47,6 +47,10 @@
         }
 
         /* Contact Card Styling */
+        .contact-card-wrapper {
+            padding-top: 60px;
+        }
+
         .contact-card {
             background-color: black;
             border-radius: 30px;
@@ -55,9 +59,7 @@
             max-width: 500px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
             text-align: center;
-            /* Make the card 25% larger than the previous 50% size */
             transform: scale(0.625);
-            /* 0.5 * 1.25 = 0.625 */
         }
 
         .contact-card h1 {
@@ -118,26 +120,28 @@
 </head>
 
 <body>
-    <div class="contact-card">
-        <img src="assets/LOGO.png" alt="Logo" style="max-width: 200px; margin-bottom: 10px;">
-        <h1>What's Up?</h1>
-        <form id="contactForm">
-            <label for="name">name</label>
-            <input type="text" id="name" name="name" placeholder="" required>
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" placeholder="" required>
-            <label for="message">message</label>
-            <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="form-status"></p>
-        <div class="contact-footer">
-            <img src="assets/footer.png" alt="Mr.Brian Design Footer Logo" style="width: 60%;">
-            <div class="social-icons">
-                <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer"><img
-                        src="assets/x-icon.png" alt="X/Twitter" width="48" height="48"></a>
-                <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer"><img
-                        src="assets/discord-icon.png" alt="Discord" width="48" height="48"></a>
+    <div class="contact-card-wrapper">
+        <div class="contact-card">
+            <img src="assets/LOGO.png" alt="Logo" style="max-width: 200px; margin-bottom: 10px;">
+            <h1>What's Up?</h1>
+            <form id="contactForm">
+                <label for="name">name</label>
+                <input type="text" id="name" name="name" placeholder="" required>
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="" required>
+                <label for="message">message</label>
+                <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="form-status"></p>
+            <div class="contact-footer">
+                <img src="assets/footer.png" alt="Mr.Brian Design Footer Logo" style="width: 60%;">
+                <div class="social-icons">
+                    <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer"><img
+                            src="assets/x-icon.png" alt="X/Twitter" width="48" height="48"></a>
+                    <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer"><img
+                            src="assets/discord-icon.png" alt="Discord" width="48" height="48"></a>
+                </div>
             </div>
         </div>
     </div>
@@ -150,11 +154,7 @@
             const status = document.getElementById("form-status");
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
-                emailjs.sendForm(
-                    "service_xk3nfr8",
-                    "template_stl5b6g",
-                    this
-                ).then(() => {
+                emailjs.sendForm("service_xk3nfr8", "template_stl5b6g", this).then(() => {
                     status.textContent = "Message sent successfully!";
                     status.style.color = "green";
                     form.reset();
