@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,20 +34,19 @@
             font-family: 'DM Sans', sans-serif;
             background-color: #121212;
             color: white;
-            overflow: hidden;
-            height: 100vh;
+            min-height: 100vh; /* Use min-height instead of height */
             display: flex;
             justify-content: center;
             align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
         }
 
         /* Contact Card Styling */
         .contact-card-wrapper {
             padding-top: 60px;
+            width: 100%; /* Make sure the wrapper takes full width */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Vertically center the card */
         }
 
         .contact-card {
@@ -59,7 +57,9 @@
             max-width: 500px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
             text-align: center;
-            transform: scale(0.625);
+            transform: scale(0.75); /* Scale down the card */
+            transform-origin: center top; /* Ensure scaling happens from the top center */
+            margin: 0 auto; /* Center the card horizontally */
         }
 
         .contact-card h1 {
@@ -81,6 +81,7 @@
             border: none;
             background-color: #333333;
             color: white;
+            box-sizing: border-box; /* added box-sizing */
         }
 
         .contact-card textarea {
@@ -116,56 +117,76 @@
             margin-top: 20px;
             text-align: center;
         }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 600px) {
+            .contact-card {
+                padding: 20px; /* Reduce padding on smaller screens */
+                width: 95%; /* Take up more width on smaller screens */
+            }
+
+            .contact-card h1 {
+                font-size: 1.5em; /* Adjust font size */
+            }
+
+            .contact-card label {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
-
 <body>
-    <div class="contact-card-wrapper">
-        <div class="contact-card">
-            <img src="assets/LOGO.png" alt="Logo" style="max-width: 200px; margin-bottom: 10px;">
-            <h1>What's Up?</h1>
-            <form id="contactForm">
-                <label for="name">name</label>
-                <input type="text" id="name" name="name" placeholder="" required>
-                <label for="email">email</label>
-                <input type="email" id="email" name="email" placeholder="" required>
-                <label for="message">message</label>
-                <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p id="form-status"></p>
-            <div class="contact-footer">
-                <img src="assets/footer.png" alt="Mr.Brian Design Footer Logo" style="width: 60%;">
-                <div class="social-icons">
-                    <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/x-icon.png" alt="X/Twitter" width="48" height="48"></a>
-                    <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/discord-icon.png" alt="Discord" width="48" height="48"></a>
-                </div>
+<div class="contact-card-wrapper">
+    <div class="contact-card">
+        <img src="assets/LOGO.png" alt="Logo" style="max-width: 200px; margin-bottom: 10px;">
+        <h1>What's Up?</h1>
+        <form id="contactForm">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" placeholder="" required>
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" placeholder="" required>
+            <label for="message">message</label>
+            <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="form-status"></p>
+        <div class="contact-footer">
+            <img src="assets/footer.png" alt="Mr.Brian Design Footer Logo" style="width: 60%;">
+            <div class="social-icons">
+                <a href="https://x.com/mrbriandesign" target="_blank" rel="noopener noreferrer"><img
+                        src="assets/x-icon.png" alt="X/Twitter" width="48" height="48"></a>
+                <a href="https://discord.gg/JVEJgUywZ4" target="_blank" rel="noopener noreferrer"><img
+                        src="assets/discord-icon.png" alt="Discord" width="48" height="48"></a>
             </div>
         </div>
     </div>
-    <!-- EmailJS Integration -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        emailjs.init("6U7D2I9QkVCCNf_9k");
-        document.addEventListener("DOMContentLoaded", () => {
-            const form = document.getElementById("contactForm");
-            const status = document.getElementById("form-status");
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-                emailjs.sendForm("service_xk3nfr8", "template_stl5b6g", this).then(() => {
+</div>
+
+<!-- EmailJS Integration -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    emailjs.init("6U7D2I9QkVCCNf_9k");
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        const status = document.getElementById("form-status");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_xk3nfr8", "template_stl5b6g", this)
+                .then(() => {
                     status.textContent = "Message sent successfully!";
                     status.style.color = "green";
                     form.reset();
-                }).catch((error) => {
+                })
+                .catch((error) => {
                     console.error("Failed to send message:", error);
                     status.textContent = "Failed to send message. Please try again.";
                     status.style.color = "red";
                 });
-            });
         });
-    </script>
+    });
+</script>
 </body>
-
 </html>
