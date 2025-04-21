@@ -5,141 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Mr.Brian Design</title>
     <meta name="description" content="Contact Mr.Brian Design to discuss your project or collaboration.">
-    <!-- Open Graph (OG) Protocol -->
     <meta property="og:title" content="Contact - Mr.Brian Design">
     <meta property="og:description" content="Contact Mr.Brian Design">
     <meta property="og:image" content="/contact-card.png">
     <meta property="og:url" content="https://www.mrbriandesign.com/contact">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mr.Brian Design">
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact - Mr.Brian Design">
     <meta name="twitter:description" content="Contact Mr.Brian Design">
     <meta property="twitter:image" content="/contact-card.png">
     <meta name="twitter:site" content="@mrbriandesign">
     <meta name="twitter:creator" content="@mrbriandesign">
-    <!-- Other Meta Tags -->
     <meta name="keywords" content="Contact, Mr.Brian Design, Email, Collaboration, Project">
     <meta name="author" content="Mr.Brian Design">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: 'DM Sans', sans-serif;
-            background-color: #121212;
-            color: white;
-            min-height: 100vh; /* Use min-height instead of height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Contact Card Styling */
-        .contact-card-wrapper {
-            padding-top: 60px;
-            width: 100%; /* Make sure the wrapper takes full width */
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Vertically center the card */
-        }
-
-        .contact-card {
-            background-color: black;
-            border-radius: 30px;
-            padding: 40px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            transform: scale(0.75); /* Scale down the card */
-            transform-origin: center top; /* Ensure scaling happens from the top center */
-            margin: 0 auto; /* Center the card horizontally */
-        }
-
-        .contact-card h1 {
-            margin-bottom: 20px;
-        }
-
-        .contact-card label {
-            display: block;
-            margin-top: 20px;
-            font-size: 16px;
-        }
-
-        .contact-card input,
-        .contact-card textarea {
-            width: calc(100% - 40px);
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            background-color: #333333;
-            color: white;
-            box-sizing: border-box; /* added box-sizing */
-        }
-
-        .contact-card textarea {
-            resize: none;
-        }
-
-        .contact-card button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .contact-card button:hover {
-            background-color: #f1f1f1;
-        }
-
-        #form-status {
-            margin-top: 20px;
-        }
-
-        /* REMOVE NAVBAR elements */
-        .llbxdll-navbar {
-            display: none;
-        }
-
-        /* Footer Styles */
-        .contact-footer {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        /* Media Query for smaller screens */
-        @media (max-width: 600px) {
-            .contact-card {
-                padding: 20px; /* Reduce padding on smaller screens */
-                width: 95%; /* Take up more width on smaller screens */
-            }
-
-            .contact-card h1 {
-                font-size: 1.5em; /* Adjust font size */
-            }
-
-            .contact-card label {
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
 <body>
 <div class="contact-card-wrapper">
     <div class="contact-card">
-        <img src="assets/LOGO.png" alt="Logo" style="max-width: 200px; margin-bottom: 10px;">
-        <h1>What's Up?</h1>
+        <!-- 3D Cube Logo Start -->
+        <div class="cube-container">
+            <div class="cube" id="cube">
+                <div class="face front"><img src="assets/LOGO.png" alt="Logo"></div>
+                <div class="face back"><img src="assets/LOGO.png" alt="Logo"></div>
+                <div class="face right"><img src="assets/LOGO.png" alt="Logo"></div>
+                <div class="face left"><img src="assets/LOGO.png" alt="Logo"></div>
+                <div class="face top"><img src="assets/LOGO.png" alt="Logo"></div>
+                <div class="face bottom"><img src="assets/LOGO.png" alt="Logo"></div>
+            </div>
+        </div>
+        <!-- 3D Cube Logo End -->
+        <h1><b>What's Up</b></h1>
         <form id="contactForm">
             <label for="name">name</label>
             <input type="text" id="name" name="name" placeholder="" required>
@@ -166,27 +67,27 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
     emailjs.init("6U7D2I9QkVCCNf_9k");
-
     document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById("contactForm");
         const status = document.getElementById("form-status");
-
         form.addEventListener("submit", function (event) {
             event.preventDefault();
-
-            emailjs.sendForm("service_xk3nfr8", "template_stl5b6g", this)
-                .then(() => {
-                    status.textContent = "Message sent successfully!";
-                    status.style.color = "green";
-                    form.reset();
-                })
-                .catch((error) => {
-                    console.error("Failed to send message:", error);
-                    status.textContent = "Failed to send message. Please try again.";
-                    status.style.color = "red";
-                });
+            emailjs.sendForm(
+                "service_xk3nfr8",
+                "template_stl5b6g",
+                this
+            ).then(() => {
+                status.textContent = "Message sent successfully!";
+                status.style.color = "green";
+                form.reset();
+            }).catch((error) => {
+                console.error("Failed to send message:", error);
+                status.textContent = "Failed to send message. Please try again.";
+                status.style.color = "red";
+            });
         });
     });
 </script>
+<script src="cube-drag.js"></script>
 </body>
 </html>
