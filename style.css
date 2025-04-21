@@ -119,7 +119,7 @@ body {
   position: absolute;
   width: 180px;
   height: 180px;
-  background: black; /* Matches your body background */
+  background: black; /* Changed from #121212 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,4 +195,14 @@ body {
   .bottom {
     transform: rotateX(-90deg) translateZ(60px);
   }
+}
+
+/* Style for the footer logo */
+.contact-footer .footer-logo {
+  width: 60%;
+  transition: transform 0.3s ease;
+}
+
+.contact-footer .footer-logo:hover {
+  transform: scale(1.2);
 }
