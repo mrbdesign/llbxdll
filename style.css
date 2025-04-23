@@ -37,6 +37,11 @@ body {
     display: block;
     margin-top: 20px;
     font-size: 16px;
+    transition: transform 0.3s ease; /* Added transition for labels */
+}
+
+.contact-card label:hover {
+    transform: scale(1.2); /* Added hover effect for labels */
 }
 
 .contact-card input,
@@ -89,12 +94,19 @@ body {
 .social-icons img {
     width: 48px;
     height: 48px;
+    transition: transform 0.3s ease; /* Added transition for social icons */
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Added hover effect for social icons */
 }
 
 /* 3D Cube Styles - UPDATED for 120% size */
 .cube-container {
-    width: 240px;   /* 200px * 1.2 */
-    height: 240px;  /* 200px * 1.2 */
+    width: 240px;
+    /* 200px * 1.2 */
+    height: 240px;
+    /* 200px * 1.2 */
     perspective: 1000px;
     margin: 0 auto 32px auto;
     display: flex;
@@ -107,8 +119,10 @@ body {
 }
 
 .cube {
-    width: 216px;   /* 180px * 1.2 */
-    height: 216px;  /* 180px * 1.2 */
+    width: 216px;
+    /* 180px * 1.2 */
+    height: 216px;
+    /* 180px * 1.2 */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -117,8 +131,10 @@ body {
 
 .face {
     position: absolute;
-    width: 216px;   /* 180px * 1.2 */
-    height: 216px;  /* 180px * 1.2 */
+    width: 216px;
+    /* 180px * 1.2 */
+    height: 216px;
+    /* 180px * 1.2 */
     background: black;
     display: flex;
     align-items: center;
@@ -135,7 +151,8 @@ body {
 }
 
 .front {
-    transform: rotateY(0deg) translateZ(108px);  /* 90px * 1.2 */
+    transform: rotateY(0deg) translateZ(108px);
+    /* 90px * 1.2 */
 }
 
 .back {
@@ -215,4 +232,14 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-style: normal;
+}
+
+h1 {
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+}
+
+h1:hover {
+    transform: scale(1.2);
+    /* Increase size by 20% */
 }

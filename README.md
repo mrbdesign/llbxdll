@@ -34,7 +34,7 @@ The contact form allows users to easily submit their information, including name
 1.  Clone the repository to your local machine:
 
     ```bash
-    git clone <YOUR_REPOSITORY_URL>
+    git clone https://github.com/mrbdesign/llbxdll
     ```
 
     Replace `<YOUR_REPOSITORY_URL>` with the actual URL of your repository.
@@ -52,6 +52,10 @@ This project uses [EmailJS](https://www.emailjs.com/) to handle form submissions
 ## 3D Cube Interaction
 
 The 3D cube can be rotated by dragging it with your mouse or touch.
+
+## Live Demo
+
+You can view a live demo of the project here: [contact-6w2u188u3-mrbdesigns-projects.vercel.app](https://contact-6w2u188u3-mrbdesigns-projects.vercel.app)
 
 ## License
 
