@@ -116,8 +116,9 @@ background-color: #f1f1f1;
     user-select: none;
     touch-action: none;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 60px; /* Increased padding-bottom */
 }
+
 
 .cube {
     width: 216px;
@@ -141,16 +142,23 @@ background-color: #f1f1f1;
     align-items: center;
     justify-content: center;
 }
-
 .face img {
-    width: 75%;
-    height: 75%;
-    object-fit: contain;
     display: block;
     pointer-events: none;
     user-select: none;
 }
 
+.face img.logo-image {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
+.face img:not(.logo-image) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .front {
     transform: rotateY(0deg) translateZ(108px);
     /* 90px * 1.2 */
