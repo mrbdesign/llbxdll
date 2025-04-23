@@ -220,7 +220,7 @@ body {
 }
 
 .contact-footer .footer-logo:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 /* Legal footer */
@@ -240,6 +240,6 @@ h1 {
 }
 
 h1:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
     /* Increase size by 20% */
 }
